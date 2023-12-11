@@ -1,4 +1,22 @@
-#include "daemon.h"
+#define _GNU_SOURCE
+#include "apue.h"
+#include <errno.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <syslog.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/time.h>
+#include <sys/resource.h>
+#define LOCKFILE "/var/run/daemon.pid"
+#define LOCKMODE (S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)
+sigset_t mask;
 int lockfile(int fd)
 {
 	struct flock fl;
@@ -46,12 +64,13 @@ void daemonize(const char *cmd)
 		err_quit("%s: fork", cmd);
 	else if (pid != 0)
 		exit(0);
-	setsid();
 	sa.sa_handler = SIG_IGN;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = 0;
 	if (sigaction(SIGHUP, &sa, NULL) != 0)
 		err_quit("%s: sigaction SIGHUP", cmd);
+	if (setsid() == -1)
+		err_quit("setsid");
 	if (chdir("/") == -1)
 		err_quit("%s: chdir /", cmd);
 	if (rl.rlim_max == RLIM_INFINITY)
@@ -77,4 +96,50 @@ void daemonize(const char *cmd)
 		syslog(LOG_ERR, "openlog %d", fd2);
 		exit(1);
 	}
+}
+void *start(void *arg)
+{
+	char **str = arg;
+	syslog(LOG_INFO, "pid=%d tid=%d str=%s", getpid(), gettid(), *str);
+	return 0;
+}
+int main(int argc, char *argv[])
+{
+	int err;
+	pthread_t tid[2];
+	char *thrstr[2] = { "aaa", "bbb" };
+	char *cmd = "02-daemon";
+	struct sigaction sa;
+	daemonize(cmd);
+	if (already_running() != 0)
+	{
+		syslog(LOG_ERR, "already_running\n");
+		exit(1);
+	}
+	sa.sa_handler = SIG_DFL;
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = 0;
+	if (sigaction(SIGHUP, &sa, NULL) == -1)
+		err_quit("%s: sigaction SIGHUP", cmd);
+	sigfillset(&mask);
+	if ((err = pthread_sigmask(SIG_BLOCK, &mask, NULL)) != 0)
+		err_exit(err, "SIG_BLOCK");
+	for (int i = 0; i < 2; i++)
+	{
+		if ((err = pthread_create(&tid[i], NULL, start, &thrstr[i])) != 0)
+		{
+			syslog(LOG_ERR, "pthread_create tid=%ld [%d]", tid[i], err);
+			exit(1);
+		}
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		if ((err = pthread_join(tid[i], NULL)) != 0)
+		{
+			syslog(LOG_ERR, "pthread_join tid=%ld [%d]", tid[i], err);
+			exit(1);
+		}
+	}
+	syslog(LOG_WARNING, "done\n");
+	exit(0);
 }

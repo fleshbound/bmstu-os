@@ -1,0 +1,28 @@
+\setenumerate[1]{label={ \arabic*)}}
+\newcommand{\dlr}{\mbox{\textdollar}}
+\renewcommand\labelitemi{---}
+
+\renewcommand{\includelistingpretty}[3]
+{
+	\lstinputlisting[
+	language={#2},
+	keywordstyle=\color{keywords},
+	stringstyle=\color{strings},
+	commentstyle=\color{comments},
+	frame=single,
+	numbers=left,
+	numberstyle=\footnotesize\color{numbers},
+	caption={#3},
+	label={lst:#1},
+	]{inc/lst/#1}
+}
+
+\titleformat{\chapter}[block]{\hspace{\parindent}\large\bfseries}{\thechapter}{0.5em}{\large\bfseries\raggedright}
+\titleformat{name=\chapter,numberless}[block]{\hspace{\parindent}}{}{-50pt}{\large\bfseries\centering}
+\titleformat{\section}[block]{\hspace{\parindent}\large\bfseries}{\thesection}{0.5em}{\large\bfseries\raggedright}
+\titleformat{\subsection}[block]{\hspace{\parindent}\large\bfseries}{\thesubsection}{0.5em}{\large\bfseries\raggedright}
+\titleformat{\subsubsection}[block]{\hspace{\parindent}\large\bfseries}{\thesubsection}{0.5em}{\large\bfseries\raggedright}
+\titlespacing{\chapter}{12.5mm}{-20pt}{20pt}
+\titlespacing{\section}{12.5mm}{10pt}{10pt}
+\titlespacing{\subsection}{12.5mm}{10pt}{10pt}
+\titlespacing{\subsubsection}{12.5mm}{10pt}{10pt}
