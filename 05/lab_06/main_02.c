@@ -17,6 +17,7 @@
 #define LOCKFILE "/var/run/daemon.pid"
 #define LOCKMODE (S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)
 sigset_t mask;
+int fl = 1;
 int lockfile(int fd)
 {
 	struct flock fl;
@@ -97,11 +98,20 @@ void daemonize(const char *cmd)
 		exit(1);
 	}
 }
-void *start(void *arg)
+void sig_handler(int signum)
+{
+	syslog(LOG_ERR, "catch signal %d", signum);
+	fl = 0;
+}
+void *thr_start(void *arg)
 {
 	char **str = arg;
-	syslog(LOG_INFO, "pid=%d tid=%d str=%s", getpid(), gettid(), *str);
-	return 0;
+	while (fl)
+	{
+		syslog(LOG_INFO, "pid=%d tid=%d str=%s", getpid(), gettid(), *str);
+		sleep(2);
+	}
+	pthread_exit(NULL);
 }
 int main(int argc, char *argv[])
 {
@@ -116,17 +126,26 @@ int main(int argc, char *argv[])
 		syslog(LOG_ERR, "already_running\n");
 		exit(1);
 	}
-	sa.sa_handler = SIG_DFL;
-	sigemptyset(&sa.sa_mask);
+	sa.sa_handler = sig_handler;
+	if (sigemptyset(&sa.sa_mask) == -1)
+	{
+		syslog(LOG_ERR, "sigemptyset");
+		exit(1);
+	}
+	if (sigaddset(&sa.sa_mask, SIGTERM) == -1)
+	{
+		syslog(LOG_ERR, "sigaddset");
+		exit(1);
+	}
 	sa.sa_flags = 0;
-	if (sigaction(SIGHUP, &sa, NULL) == -1)
-		err_quit("%s: sigaction SIGHUP", cmd);
-	sigfillset(&mask);
-	if ((err = pthread_sigmask(SIG_BLOCK, &mask, NULL)) != 0)
-		err_exit(err, "SIG_BLOCK");
+	if (sigaction(SIGTERM, &sa, NULL) == -1)
+	{
+		syslog(LOG_ERR, "sigaction SIGTERM");
+		exit(1);
+	}
 	for (int i = 0; i < 2; i++)
 	{
-		if ((err = pthread_create(&tid[i], NULL, start, &thrstr[i])) != 0)
+		if ((err = pthread_create(&tid[i], NULL, thr_start, &thrstr[i])) == -1)
 		{
 			syslog(LOG_ERR, "pthread_create tid=%ld [%d]", tid[i], err);
 			exit(1);
@@ -134,12 +153,19 @@ int main(int argc, char *argv[])
 	}
 	for (int i = 0; i < 2; i++)
 	{
-		if ((err = pthread_join(tid[i], NULL)) != 0)
+		if ((err = pthread_join(tid[i], NULL)) == -1)
 		{
 			syslog(LOG_ERR, "pthread_join tid=%ld [%d]", tid[i], err);
 			exit(1);
 		}
 	}
-	syslog(LOG_WARNING, "done\n");
-	exit(0);
+	fl = 1;
+	long int ttime;
+	while (fl)
+	{
+		ttime = time(NULL);
+		syslog(LOG_INFO, "time: %s\n", ctime(&ttime));
+		sleep(2);
+	}
+	return 0;
 }

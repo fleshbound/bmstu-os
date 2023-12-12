@@ -67,7 +67,7 @@ void daemonize(const char *cmd)
 	sa.sa_handler = SIG_IGN;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = 0;
-	if (sigaction(SIGHUP, &sa, NULL) != 0)
+	if (sigaction(SIGHUP, &sa, NULL) == -1)
 		err_quit("%s: sigaction SIGHUP", cmd);
 	if (setsid() == -1)
 		err_quit("setsid");
@@ -103,7 +103,10 @@ void reread(void)
     int pid;
     syslog(LOG_DAEMON, "user: %s", getlogin());
     if ((fd = fopen("/var/run/daemon.pid", "r")) == NULL)
-        syslog(LOG_ERR, "fopen /var/run/daemon.pid");
+    {
+		syslog(LOG_ERR, "fopen /var/run/daemon.pid");
+		exit(1);
+	}
     fscanf(fd, "%d", &pid);
     fclose(fd);
     syslog(LOG_INFO, "pid: %d", pid);
@@ -152,16 +155,32 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	sa.sa_handler = SIG_DFL;
-	sigemptyset(&sa.sa_mask);
+	if (sigemptyset(&sa.sa_mask) == -1)
+	{
+		syslog(LOG_ERR, "sigemptyset");
+		exit(1);
+	}
 	sa.sa_flags = 0;
 	if (sigaction(SIGHUP, &sa, NULL) == -1)
-		err_quit("%s: sigaction SIGHUP", cmd);
-	sigfillset(&mask);
-	if ((err = pthread_sigmask(SIG_BLOCK, &mask, NULL)) != 0)
-		err_exit(err, "SIG_BLOCK");
-	if ((err = pthread_create(&tid, NULL, thr_fn, NULL)) != 0)
-		err_exit(err, "pthread_create");
-	syslog(LOG_WARNING, "check done\n");
+	{
+		syslog(LOG_ERR, "%s: sigaction SIGHUP", cmd);
+		exit(1);
+	}
+	if (sigfillset(&mask) == -1)
+	{
+		syslog(LOG_ERR, "sigfillset");
+		exit(1);
+	}
+	if ((err = pthread_sigmask(SIG_BLOCK, &mask, NULL)) == -1)
+	{
+		syslog(LOG_ERR, "SIG_BLOCK %d", err);
+		exit(1);
+	}
+	if ((err = pthread_create(&tid, NULL, thr_fn, NULL)) == -1)
+	{
+		syslog(LOG_ERR, "pthread_create %d", err);
+		exit(1);
+	}
 	long int ttime;
 	while (1)
 	{
