@@ -41,7 +41,6 @@ int main(void)
         }
         else if (childpid[i] == 0)
         {
-			srand(time(NULL));
 			char msg[16];
 			sprintf(msg, "%d%c", getpid(), '\0');
 			close(sockets[0]);
