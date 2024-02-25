@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <time.h>
-#define N 1
+#define N 3
 void check_w(pid_t w, const int wstatus)
 {
     if (WIFEXITED(wstatus))
@@ -44,8 +44,8 @@ int main(void)
 			char msg[16];
 			sprintf(msg, "%d%c", getpid(), '\0');
 			close(sockets[0]);
-			write(sockets[1], msg, sizeof(msg));
 			printf("child  %d send: %s\n", getpid(), msg);
+			write(sockets[1], msg, sizeof(msg));
 			sleep(1);
 			read(sockets[1], buf, sizeof(buf));
 			printf("child  %d read: %s\n", getpid(), buf);
