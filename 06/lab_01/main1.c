@@ -5,28 +5,19 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
-#define ITER 1000
 typedef int my_func_t(const char *, const struct stat *, int);
 static my_func_t myfunc;
 static int myftw(char *, my_func_t *);
 static int dopath(my_func_t *, char *);
-int debug = 0;
 int main(int argc, char *argv[])
 {
 	int ret;
 	if (argc != 2)
-		err_quit("usage: ftw <start_dir>");
+	err_quit("usage: ftw <start_dir>");
+	unsigned long start = clock();
 	ret = myftw(argv[1], myfunc);
-	debug = 1;
-	double sum_time = 0;
-	for (int i = 0; i < ITER; i++)
-	{
-		unsigned long start = clock();
-		ret = myftw(argv[1], myfunc);
-		unsigned long end = clock() - start;
-		sum_time += (double) end * 1000000 / CLOCKS_PER_SEC;
-	}
-	printf("\nno CHDIR time: %.3f\n", sum_time / (double) ITER);
+	unsigned long end = clock() - start;
+	printf("\nCHDIR time: %.3f\n", (double) end * 1000000 / CLOCKS_PER_SEC);
 	exit(ret);
 }
 #define FTW_F 1
@@ -79,18 +70,12 @@ static int myfunc(const char *pathname, const struct stat *statbuf, int type)
 	switch (type)
 	{
 		case FTW_F:
-			if (!debug)
-			{
 				print_sep();
 				printf("%s\n", pathname);
-			}
 			break;
 		case FTW_D:
-			if (!debug)
-			{
 				print_sep();
 				printf("%s\n", pathname);
-			}
 			break;
 		case FTW_DNR:
 			err_ret("no access %s", pathname);

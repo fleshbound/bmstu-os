@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <time.h>
-#define N 3
+#define N 1
 void check_w(pid_t w, const int wstatus)
 {
     if (WIFEXITED(wstatus))
