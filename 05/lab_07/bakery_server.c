@@ -40,7 +40,6 @@ bakery(void *arg)
 		while (choosing[j]);
 		while ((number[j] != 0) && (number[j] < number[i] || (number[j] == number[i] && j < i)));
 	}
-	sleep(3);
 	thr_res[i].res = curr_res;
 	curr_res++;
 	if (curr_res > 'z')
