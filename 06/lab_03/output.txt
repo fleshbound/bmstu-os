@@ -1,0 +1,150 @@
+
+
+MAPS
+
+address                   perms  offset  dev   inode                      pathname
+637e4c6e5000-637e4c6e6000 r--p 00000000 103:03 4628642                   /home/sheglar/bmstu/os/06/lab_03/bakery_server
+637e4c6e6000-637e4c6e7000 r-xp 00001000 103:03 4628642                   /home/sheglar/bmstu/os/06/lab_03/bakery_server
+637e4c6e7000-637e4c6e8000 r--p 00002000 103:03 4628642                   /home/sheglar/bmstu/os/06/lab_03/bakery_server
+637e4c6e8000-637e4c6e9000 r--p 00002000 103:03 4628642                   /home/sheglar/bmstu/os/06/lab_03/bakery_server
+637e4c6e9000-637e4c6ea000 rw-p 00003000 103:03 4628642                   /home/sheglar/bmstu/os/06/lab_03/bakery_server
+637e4cc7d000-637e4cc9e000 rw-p 00000000 00:00 0                          [heap]
+7f08b4000000-7f08b4021000 rw-p 00000000 00:00 0 
+7f08b4021000-7f08b8000000 ---p 00000000 00:00 0 
+7f08bb28b000-7f08bb28c000 ---p 00000000 00:00 0 
+7f08bb28c000-7f08bba90000 rw-p 00000000 00:00 0 
+7f08bba90000-7f08bba93000 r--p 00000000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+7f08bba93000-7f08bba9d000 r-xp 000
+03000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+7f08bba9d000-7f08bbaa0000 r--p 0000d000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+7f08bbaa0000-7f08bbaa1000 r--p 0000f000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+7f08bbaa1000-7f08bbaa2000 rw-p 00010000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+7f08bbaa2000-7f08bbaa4000 rw-p 00000000 00:00 0 
+7f08bbaa4000-7f08bbaa7000 r--p 00000000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f08bbaa7000-7f08bbaad000 r-xp 00003000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f08bbaad000-7f08bbaaf000 r--p 00009000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f08bbaaf000-7f08bbab0000 ---p 0000b000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f08bbab0000-7f08bbab1000 r--p 0000b000 103:03 395251                
+    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f08bbab1000-7f08bbab2000 rw-p 0000c000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f08bbab2000-7f08bbab6000 r--p 00000000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f08bbab6000-7f08bbad1000 r-xp 00004000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f08bbad1000-7f08bbadd000 r--p 0001f000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f08bbadd000-7f08bbade000 ---p 0002b000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f08bbade000-7f08bbadf000 r--p 0002b000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f08bbadf000-7f08bbae0000 rw-p 0002c000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f08bbae0000-7f08bbae1000 rw-p 00000000 00:00 0 
+7f08bbae1000-7f08bbb02000 r--p 00000000 103:03 395254                    /usr/lib/x86_64-linux
+-gnu/libkrb5.so.3.3
+7f08bbb02000-7f08bbb5f000 r-xp 00021000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f08bbb5f000-7f08bbb9c000 r--p 0007e000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f08bbb9c000-7f08bbb9d000 ---p 000bb000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f08bbb9d000-7f08bbbaa000 r--p 000bb000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f08bbbaa000-7f08bbbac000 rw-p 000c8000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f08bbbac000-7f08bbbb7000 r--p 00000000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f08bbbb7000-7f08bbbef000 r-xp 0000b000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f08bbbef000-7f08bbbfb000 r--p 00043000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f08bbbfb000-7f08bbbfc000 ---p 0004f000 103:03 395256                  
+  /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f08bbbfc000-7f08bbbfe000 r--p 0004f000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f08bbbfe000-7f08bbc00000 rw-p 00051000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f08bbc00000-7f08bbc28000 r--p 00000000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f08bbc28000-7f08bbdbd000 r-xp 00028000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f08bbdbd000-7f08bbe15000 r--p 001bd000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f08bbe15000-7f08bbe16000 ---p 00215000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f08bbe16000-7f08bbe1a000 r--p 00215000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f08bbe1a000-7f08bbe1c000 rw-p 00219000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f08bbe1c000-7f08bbe29000 rw-p 00000000 00:00 0 
+7f08bbe29000-7f08bbe2b000 r--
+p 00000000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+7f08bbe2b000-7f08bbe2d000 r-xp 00002000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+7f08bbe2d000-7f08bbe2e000 r--p 00004000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+7f08bbe2e000-7f08bbe2f000 r--p 00004000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+7f08bbe2f000-7f08bbe30000 rw-p 00005000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+7f08bbe30000-7f08bbe32000 r--p 00000000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f08bbe32000-7f08bbe33000 r-xp 00002000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f08bbe33000-7f08bbe34000 r--p 00003000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f08bbe34000-7f08bbe35000 r--p 00003000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so
+.2.1
+7f08bbe35000-7f08bbe36000 rw-p 00004000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f08bbe36000-7f08bbe38000 rw-p 00000000 00:00 0 
+7f08bbe38000-7f08bbe3f000 r--p 00000000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+7f08bbe3f000-7f08bbe5a000 r-xp 00007000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+7f08bbe5a000-7f08bbe63000 r--p 00022000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+7f08bbe63000-7f08bbe64000 ---p 0002b000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+7f08bbe64000-7f08bbe65000 r--p 0002b000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+7f08bbe65000-7f08bbe66000 rw-p 0002c000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+7f08bbe7c000-7f08bbe7e000 rw-p 00000000 00:00 0 
+7f08bbe7e000-7f08bbe80000 r--p 00000000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-
+linux-x86-64.so.2
+7f08bbe80000-7f08bbeaa000 r-xp 00002000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f08bbeaa000-7f08bbeb5000 r--p 0002c000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f08bbeb6000-7f08bbeb8000 r--p 00037000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f08bbeb8000-7f08bbeba000 rw-p 00039000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffdf5fe7000-7ffdf6009000 rw-p 00000000 00:00 0                          [stack]
+7ffdf6110000-7ffdf6114000 r--p 00000000 00:00 0                          [vvar]
+7ffdf6114000-7ffdf6116000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+
+STAT
+
+pid  106919
+comm  (bakery_server)
+state  S
+ppid  106619
+pgrp  106919
+session  106619
+tty_nr  34818
+tpgid  106919
+flags  4194304
+minflt  171
+cminflt  0
+majflt  0
+cmajflt  0
+utime  0
+stime  0
+cutime  0
+cstime  0
+priority  20
+nice  0
+num_threads  2
+itrealvalue  0
+starttime  27013605
+vsize  80109568
+rss  672
+rsslim  18446744073709551615
+startcode  109394099331072
+endcode  109394099334189
+startstack  140728730675600
+kstkesp  0
+kstkeip  0
+signal  0
+blocked  0
+sigignore  0
+sigcatch  0
+wchan  0
+nswap  0
+cnswap  0
+exit_signal  17
+processor  4
+rt_priority  0
+policy  0
+delayacct_blkio_ticks  0
+guest_time  0
+cguest_time  0
+start_data  109394099342584
+end_data  109394099343380
+start_brk  109394105192448
+arg_start  140728730680533
+arg_end  140728730680549
+env_start  140728730680549
+env_end  140728730685416
+exit_code  0
+
+
+
+TASK
+
+106919  
+106923  
