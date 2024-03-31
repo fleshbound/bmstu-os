@@ -8,10 +8,10 @@
 *.elf
 
 # bakery lol
-bakery_client
-bakery_client1
-bakery_server1
-bakery_server
+*bakery_client
+*bakery_client1
+*bakery_server1
+*bakery_server
 
 # Linker output
 *.ilk
