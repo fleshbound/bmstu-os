@@ -34,19 +34,20 @@ bakery(void *arg)
 	timeinfo = localtime(&raw_time);
 	struct thread_arg *t_arg = arg;
 	int i = t_arg->pid;
-	printf("start thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), i, number[i], asctime(timeinfo));
+	printf("start thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), t_arg->pid, number[i], asctime(timeinfo));
+    //sleep(2);
 	for (int j = 0; j < MAX_CLIENT; j++)
 	{
 		while (choosing[j]);
 		while ((number[j] != 0) && (number[j] < number[i] || (number[j] == number[i] && j < i)));
 	}
-	thr_res[i].res = curr_res;
+    t_arg->res = curr_res;
 	curr_res++;
 	if (curr_res > 'z')
 		curr_res = 'a';
 	time(&raw_time);
     timeinfo = localtime(&raw_time);
-	printf("stop  thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), i, number[i], asctime(timeinfo));
+	printf("stop  thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), t_arg->pid, number[i], asctime(timeinfo));
 	number[i] = 0;
 	return 0;
 }
@@ -59,14 +60,16 @@ getn_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 	local_pid++;
 	choosing[i] = true;
 	int max_n = 0;
-	for (int j = 0; j < MAX_CLIENT; j++)
+	for (int j = 0; j < MAX_CLIENT; j++) {
 		if (number[j] > max_n)
-			max_n = number[j];
+            max_n = number[j];
+    }
 	number[i] = max_n + 1;
 	result.pid = i;
 	result.num = number[i];
 	choosing[i] = false;
-	return &result;
+	printf("%d\n", number[i]);
+    return &result;
 }
 
 struct BAKERY *
@@ -74,9 +77,10 @@ wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
 	static struct BAKERY  result;
 	pthread_t thr;
-	thr_res[argp->pid].pid = argp->pid;
-	pthread_create(&thr, NULL, bakery, &thr_res[argp->pid]);
-	threads[argp->pid] = thr;
+    int i = argp->pid;
+	thr_res[i].pid = argp->pid;
+	pthread_create(&thr, NULL, bakery, &thr_res[i]);
+	threads[i] = thr;
 	return &result;
 }
 
