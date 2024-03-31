@@ -1,0 +1,1368 @@
+ENVIRON
+SHELL=/bin/bash
+SESSION_MANAGER=local/sheglar-ThinkPad-X280:@/tmp/.ICE-unix/1939,unix/sheglar-ThinkPad-X280:/tmp/.ICE-unix/1939
+QT_ACCESSIBILITY=1
+COLORTERM=truecolor
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+SSH_AGENT_LAUNCHER=gnome-keyring
+NVM_INC=/home/sheglar/.nvm/versions/node/v21.7.1/include/node
+XDG_MENU_PREFIX=gnome-
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+MATHEMATICA_HOME=/usr/local/Wolfram/Mathematica/13.2
+LC_ADDRESS=ru_RU.UTF-8
+GNOME_SHELL_SESSION_MODE=ubuntu
+LC_NAME=ru_RU.UTF-8
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+GOLAND_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/goland.vmoptions
+JETBRAINSCLIENT_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/jetbrainsclient.vmoptions
+XMODIFIERS=@im=ibus
+WEBSTORM_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/webstorm.vmoptions
+PHPSTORM_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/phpstorm.vmoptions
+DESKTOP_SESSION=ubuntu
+LC_MONETARY=ru_RU.UTF-8
+GTK_MODULES=gail:atk-bridge
+WEBIDE_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/webide.vmoptions
+PWD=/home/sheglar/bmstu/os/06/lab_03/lab_07
+GATEWAY_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/gateway.vmoptions
+XDG_SESSION_DESKTOP=ubuntu
+LOGNAME=sheglar
+XDG_SESSION_TYPE=wayland
+DATASPELL_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/dataspell.vmoptions
+SYSTEMD_EXEC_PID=2192
+XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.E2XZK2
+HOME=/home/sheglar
+USERNAME=sheglar
+IM_CONFIG_PHASE=1
+LC_PAPER=ru_RU.UTF-8
+LANG=en_US.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+VTE_VERSION=6800
+APPCODE_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/appcode.vmoptions
+WAYLAND_DISPLAY=wayland-0
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/65eead33_405f_4e9c_ac63_b7a426e7582a
+NVM_DIR=/home/sheglar/.nvm
+GNOME_SETUP_DISPLAY=:1
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+LC_IDENTIFICATION=ru_RU.UTF-8
+LESSOPEN=| /usr/bin/lesspipe %s
+USER=sheglar
+GNOME_TERMINAL_SERVICE=:1.358
+IDEA_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/idea.vmoptions
+DISPLAY=:0
+SHLVL=1
+NVM_CD_FLAGS=
+STUDIO_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/studio.vmoptions
+LC_TELEPHONE=ru_RU.UTF-8
+QT_IM_MODULE=ibus
+LC_MEASUREMENT=ru_RU.UTF-8
+CLION_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/clion.vmoptions
+DATAGRIP_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/datagrip.vmoptions
+RIDER_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/rider.vmoptions
+JETBRAINS_CLIENT_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/jetbrains_client.vmoptions
+XDG_RUNTIME_DIR=/run/user/1000
+LC_TIME=ru_RU.UTF-8
+PYCHARM_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/pycharm.vmoptions
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+PATH=/home/sheglar/.nvm/versions/node/v21.7.1/bin:/home/sheglar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/texlive/2023/bin/x86_64-linux:/opt/DataGrip-2023.2.3/bin/:/opt/nvim-linux64/bin
+GDMSESSION=ubuntu
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+NVM_BIN=/home/sheglar/.nvm/versions/node/v21.7.1/bin
+RUBYMINE_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/rubymine.vmoptions
+DEVECOSTUDIO_VM_OPTIONS=/home/sheglar/ja-netfilter-all/vmoptions/devecostudio.vmoptions
+LC_NUMERIC=ru_RU.UTF-8
+OLDPWD=/home/sheglar/bmstu/os/06/lab_03
+_=./bakery_server
+
+STAT
+(1) pid            	128425
+(2) comm           	(bakery_server)
+(3) state          	S
+(4) ppid           	123114
+(5) pgrp           	128425
+(6) session        	123114
+(7) tty_nr         	34817
+(8) tpgid          	128425
+(9) flags          	4194304
+(10) minflt        	167
+(11) cminflt       	0
+(12) majflt        	0
+(13) cmajflt       	0
+(14) utime         	0
+(15) stime         	0
+(16) cutime        	0
+(17) cstime        	0
+(18) priority      	20
+(19) nice          	0
+(20) num_threads   	1
+(21) itrealvalue   	0
+(22) starttime     	28993094
+(23) vsize         	4608000
+(24) rss           	672
+(25) rsslim        	18446744073709551615
+(26) startcode     	94880075358208
+(27) endcode       	94880075361085
+(28) startstack    	140729847452192
+(29) kstkesp       	0
+(30) kstkeip       	0
+(31) signal        	0
+(32) blocked       	0
+(33) sigignore     	0
+(34) sigcatch      	0
+(35) wchan         	1
+(36) nswap         	0
+(37) cnswap        	0
+(38) exit_signal   	17
+(39) processor     	5
+(40) rt_priority   	0
+(41) policy        	0
+(42) delayacct_blkio_ticks  	0
+(43) guest_time    	0
+(44) cguest_time   	0
+(45) start_data    	94880075369736
+(46) end_data      	94880075370516
+(47) start_brk     	94880077385728
+(48) arg_start     	140729847454887
+(49) arg_end       	140729847454903
+(50) env_start     	140729847454903
+(51) env_end       	140729847459816
+(52) exit_code     	0
+
+
+CMDLINE: ./bakery_server
+
+FD
+0 -> /dev/pts/1
+1 -> /dev/pts/1
+2 -> /dev/pts/1
+3 -> socket:[732309]
+4 -> socket:[732311]
+
+CWD: /home/sheglar/bmstu/os/06/lab_03/lab_07
+
+EXE: /home/sheglar/bmstu/os/06/lab_03/lab_07/bakery_server
+
+ROOT: /
+
+
+MAPS
+bytes		in pages		addr-addr             perms  offset   dev   inode                      pathname
+4096		1			564afd301000-564afd302000 r--p 00000000 103:03 4991781                   /home/sheglar/bmstu/os/06/lab_03/lab_07/bakery_server
+4096		1			564afd302000-564afd303000 r-xp 00001000 103:03 4991781                   /home/sheglar/bmstu/os/06/lab_03/lab_07/bakery_server
+4096		1			564afd303000-564afd304000 r--p 00002000 103:03 4991781                   /home/sheglar/bmstu/os/06/lab_03/lab_07/bakery_server
+4096		1			564afd304000-564afd305000 r--p 00002000 103:03 4991781                   /home/sheglar/bmstu/os/06/lab_03/lab_07/bakery_server
+4096		1			564afd305000-564afd306000 rw-p 00003000 103:03 4991781                   /home/sheglar/bmstu/os/06/lab_03/lab_07/bakery_server
+135168		33			564afd4f1000-564afd512000 rw-p 00000000 00:00 0                          [heap]
+163840		40			7a5693000000-7a5693028000 r--p 00000000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+1658880		405			7a5693028000-7a56931bd000 r-xp 00028000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+360448		88			7a56931bd000-7a5693215000 r--p 001bd000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+4096		1			7a5693215000-7a5693216000 ---p 00215000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+16384		4			7a5693216000-7a569321a000 r--p 00215000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+8192		2			7a569321a000-7a569321c000 rw-p 00219000 103:03 395354                    /usr/lib/x86_64-linux-gnu/libc.so.6
+53248		13			7a569321c000-7a5693229000 rw-p 00000000 00:00 0 
+16384		4			7a5693285000-7a5693289000 rw-p 00000000 00:00 0 
+12288		3			7a5693289000-7a569328c000 r--p 00000000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+40960		10			7a569328c000-7a5693296000 r-xp 00003000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+12288		3			7a5693296000-7a5693299000 r--p 0000d000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+4096		1			7a5693299000-7a569329a000 r--p 0000f000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+4096		1			7a569329a000-7a569329b000 rw-p 00010000 103:03 395456                    /usr/lib/x86_64-linux-gnu/libresolv.so.2
+8192		2			7a569329b000-7a569329d000 rw-p 00000000 00:00 0 
+8192		2			7a569329d000-7a569329f000 r--p 00000000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+8192		2			7a569329f000-7a56932a1000 r-xp 00002000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+4096		1			7a56932a1000-7a56932a2000 r--p 00004000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+4096		1			7a56932a2000-7a56932a3000 r--p 00004000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+4096		1			7a56932a3000-7a56932a4000 rw-p 00005000 103:03 420897                    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9
+12288		3			7a56932a4000-7a56932a7000 r--p 00000000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+24576		6			7a56932a7000-7a56932ad000 r-xp 00003000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+8192		2			7a56932ad000-7a56932af000 r--p 00009000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+4096		1			7a56932af000-7a56932b0000 ---p 0000b000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+4096		1			7a56932b0000-7a56932b1000 r--p 0000b000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+4096		1			7a56932b1000-7a56932b2000 rw-p 0000c000 103:03 395251                    /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+8192		2			7a56932b2000-7a56932b4000 r--p 00000000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+4096		1			7a56932b4000-7a56932b5000 r-xp 00002000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+4096		1			7a56932b5000-7a56932b6000 r--p 00003000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+4096		1			7a56932b6000-7a56932b7000 r--p 00003000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+4096		1			7a56932b7000-7a56932b8000 rw-p 00004000 103:03 420366                    /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+8192		2			7a56932b8000-7a56932ba000 rw-p 00000000 00:00 0 
+16384		4			7a56932ba000-7a56932be000 r--p 00000000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+110592		27			7a56932be000-7a56932d9000 r-xp 00004000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+49152		12			7a56932d9000-7a56932e5000 r--p 0001f000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+4096		1			7a56932e5000-7a56932e6000 ---p 0002b000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+4096		1			7a56932e6000-7a56932e7000 r--p 0002b000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+4096		1			7a56932e7000-7a56932e8000 rw-p 0002c000 103:03 395249                    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+4096		1			7a56932e8000-7a56932e9000 rw-p 00000000 00:00 0 
+135168		33			7a56932e9000-7a569330a000 r--p 00000000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+380928		93			7a569330a000-7a5693367000 r-xp 00021000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+249856		61			7a5693367000-7a56933a4000 r--p 0007e000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+4096		1			7a56933a4000-7a56933a5000 ---p 000bb000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+53248		13			7a56933a5000-7a56933b2000 r--p 000bb000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+8192		2			7a56933b2000-7a56933b4000 rw-p 000c8000 103:03 395254                    /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+45056		11			7a56933b4000-7a56933bf000 r--p 00000000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+229376		56			7a56933bf000-7a56933f7000 r-xp 0000b000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+49152		12			7a56933f7000-7a5693403000 r--p 00043000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+4096		1			7a5693403000-7a5693404000 ---p 0004f000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+8192		2			7a5693404000-7a5693406000 r--p 0004f000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+8192		2			7a5693406000-7a5693408000 rw-p 00051000 103:03 395256                    /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+28672		7			7a5693408000-7a569340f000 r--p 00000000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+110592		27			7a569340f000-7a569342a000 r-xp 00007000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+36864		9			7a569342a000-7a5693433000 r--p 00022000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+4096		1			7a5693433000-7a5693434000 ---p 0002b000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+4096		1			7a5693434000-7a5693435000 r--p 0002b000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+4096		1			7a5693435000-7a5693436000 rw-p 0002c000 103:03 421407                    /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0
+8192		2			7a569344c000-7a569344e000 rw-p 00000000 00:00 0 
+8192		2			7a569344e000-7a5693450000 r--p 00000000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+172032		42			7a5693450000-7a569347a000 r-xp 00002000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+45056		11			7a569347a000-7a5693485000 r--p 0002c000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+8192		2			7a5693486000-7a5693488000 r--p 00037000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+8192		2			7a5693488000-7a569348a000 rw-p 00039000 103:03 395343                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+139264		34			7ffe388f1000-7ffe38913000 rw-p 00000000 00:00 0                          [stack]
+16384		4			7ffe38976000-7ffe3897a000 r--p 00000000 00:00 0                          [vvar]
+8192		2			7ffe3897a000-7ffe3897c000 r-xp 00000000 00:00 0                          [vdso]
+4096		1			ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+Total size (in bytes): 4612096
+Total size (in pages): 1126
+IO
+rchar: 18823
+wchar: 632
+syscr: 33
+syscw: 8
+read_bytes: 0
+write_bytes: 0
+cancelled_write_bytes: 0
+
+COMM: bakery_server
+
+TASK
+128425
+
+
+
+PAGEMAP
+
+   addr         pfn      soft-dirty    file/shared    swapped     present
+0x564afd301000    : 0          1          1          0          1         
+0x564afd302000    : 0          1          1          0          1         
+0x564afd303000    : 0          1          1          0          1         
+0x564afd304000    : 0          1          0          0          1         
+0x564afd305000    : 0          1          0          0          1         
+0x564afd4f1000    : 0          1          0          0          1         
+0x564afd4f2000    : 0          1          0          0          1         
+0x564afd4f3000    : 0          1          0          0          1         
+0x564afd4f4000    : 0          1          0          0          1         
+0x564afd4f5000    : 0          1          0          0          1         
+0x564afd4f6000    : 0          1          0          0          1         
+0x564afd4f7000    : 0          1          0          0          1         
+0x564afd4f8000    : 0          1          0          0          1         
+0x564afd4f9000    : 0          1          0          0          1         
+0x564afd4fa000    : 0          1          0          0          1         
+0x564afd4fb000    : 0          1          0          0          1         
+0x564afd4fc000    : 0          1          0          0          1         
+0x564afd4fd000    : 0          1          0          0          1         
+0x564afd4fe000    : 0          1          0          0          0         
+0x564afd4ff000    : 0          1          0          0          0         
+0x564afd500000    : 0          1          0          0          0         
+0x564afd501000    : 0          1          0          0          0         
+0x564afd502000    : 0          1          0          0          0         
+0x564afd503000    : 0          1          0          0          0         
+0x564afd504000    : 0          1          0          0          0         
+0x564afd505000    : 0          1          0          0          0         
+0x564afd506000    : 0          1          0          0          0         
+0x564afd507000    : 0          1          0          0          0         
+0x564afd508000    : 0          1          0          0          0         
+0x564afd509000    : 0          1          0          0          0         
+0x564afd50a000    : 0          1          0          0          0         
+0x564afd50b000    : 0          1          0          0          0         
+0x564afd50c000    : 0          1          0          0          0         
+0x564afd50d000    : 0          1          0          0          0         
+0x564afd50e000    : 0          1          0          0          0         
+0x564afd50f000    : 0          1          0          0          0         
+0x564afd510000    : 0          1          0          0          0         
+0x564afd511000    : 0          1          0          0          0         
+0x7a5693000000    : 0          1          1          0          1         
+0x7a5693001000    : 0          1          1          0          1         
+0x7a5693002000    : 0          1          1          0          1         
+0x7a5693003000    : 0          1          1          0          1         
+0x7a5693004000    : 0          1          1          0          1         
+0x7a5693005000    : 0          1          1          0          1         
+0x7a5693006000    : 0          1          1          0          1         
+0x7a5693007000    : 0          1          1          0          1         
+0x7a5693008000    : 0          1          1          0          1         
+0x7a5693009000    : 0          1          1          0          1         
+0x7a569300a000    : 0          1          1          0          1         
+0x7a569300b000    : 0          1          1          0          1         
+0x7a569300c000    : 0          1          1          0          1         
+0x7a569300d000    : 0          1          1          0          1         
+0x7a569300e000    : 0          1          1          0          1         
+0x7a569300f000    : 0          1          1          0          1         
+0x7a5693010000    : 0          1          1          0          1         
+0x7a5693011000    : 0          1          1          0          1         
+0x7a5693012000    : 0          1          1          0          1         
+0x7a5693013000    : 0          1          1          0          1         
+0x7a5693014000    : 0          1          1          0          1         
+0x7a5693015000    : 0          1          1          0          1         
+0x7a5693016000    : 0          1          1          0          1         
+0x7a5693017000    : 0          1          1          0          1         
+0x7a5693018000    : 0          1          1          0          1         
+0x7a5693019000    : 0          1          1          0          1         
+0x7a569301a000    : 0          1          1          0          1         
+0x7a569301b000    : 0          1          1          0          1         
+0x7a569301c000    : 0          1          1          0          1         
+0x7a569301d000    : 0          1          1          0          1         
+0x7a569301e000    : 0          1          1          0          1         
+0x7a569301f000    : 0          1          1          0          1         
+0x7a5693020000    : 0          1          1          0          1         
+0x7a5693021000    : 0          1          1          0          1         
+0x7a5693022000    : 0          1          1          0          1         
+0x7a5693023000    : 0          1          1          0          1         
+0x7a5693024000    : 0          1          1          0          1         
+0x7a5693025000    : 0          1          1          0          1         
+0x7a5693026000    : 0          1          1          0          1         
+0x7a5693027000    : 0          1          1          0          1         
+0x7a5693028000    : 0          1          1          0          1         
+0x7a5693029000    : 0          1          1          0          1         
+0x7a569302a000    : 0          1          1          0          1         
+0x7a569302b000    : 0          1          1          0          1         
+0x7a569302c000    : 0          1          1          0          1         
+0x7a569302d000    : 0          1          1          0          1         
+0x7a569302e000    : 0          1          1          0          1         
+0x7a569302f000    : 0          1          1          0          1         
+0x7a5693030000    : 0          1          1          0          1         
+0x7a5693031000    : 0          1          1          0          1         
+0x7a5693032000    : 0          1          1          0          1         
+0x7a5693033000    : 0          1          1          0          1         
+0x7a5693034000    : 0          1          1          0          1         
+0x7a5693035000    : 0          1          1          0          1         
+0x7a5693036000    : 0          1          1          0          1         
+0x7a5693037000    : 0          1          1          0          1         
+0x7a5693038000    : 0          1          1          0          1         
+0x7a5693039000    : 0          1          1          0          1         
+0x7a569303a000    : 0          1          1          0          1         
+0x7a569303b000    : 0          1          1          0          1         
+0x7a569303c000    : 0          1          1          0          1         
+0x7a569303d000    : 0          1          1          0          1         
+0x7a569303e000    : 0          1          1          0          1         
+0x7a569303f000    : 0          1          1          0          1         
+0x7a5693040000    : 0          1          1          0          1         
+0x7a5693041000    : 0          1          1          0          1         
+0x7a5693042000    : 0          1          1          0          1         
+0x7a5693043000    : 0          1          1          0          1         
+0x7a5693044000    : 0          1          1          0          1         
+0x7a5693045000    : 0          1          1          0          1         
+0x7a5693046000    : 0          1          1          0          1         
+0x7a5693047000    : 0          1          1          0          1         
+0x7a5693048000    : 0          1          1          0          1         
+0x7a5693049000    : 0          1          1          0          1         
+0x7a569304a000    : 0          1          1          0          1         
+0x7a569304b000    : 0          1          1          0          1         
+0x7a569304c000    : 0          1          1          0          1         
+0x7a569304d000    : 0          1          1          0          1         
+0x7a569304e000    : 0          1          1          0          1         
+0x7a569304f000    : 0          1          1          0          1         
+0x7a5693050000    : 0          1          1          0          1         
+0x7a5693051000    : 0          1          1          0          1         
+0x7a5693052000    : 0          1          1          0          1         
+0x7a5693053000    : 0          1          1          0          1         
+0x7a5693054000    : 0          1          1          0          1         
+0x7a5693055000    : 0          1          1          0          1         
+0x7a5693056000    : 0          1          1          0          1         
+0x7a5693057000    : 0          1          1          0          1         
+0x7a5693058000    : 0          1          1          0          1         
+0x7a5693059000    : 0          1          1          0          1         
+0x7a569305a000    : 0          1          1          0          1         
+0x7a569305b000    : 0          1          1          0          1         
+0x7a569305c000    : 0          1          1          0          1         
+0x7a569305d000    : 0          1          1          0          1         
+0x7a569305e000    : 0          1          1          0          1         
+0x7a569305f000    : 0          1          1          0          1         
+0x7a5693060000    : 0          1          1          0          1         
+0x7a5693061000    : 0          1          1          0          1         
+0x7a5693062000    : 0          1          1          0          1         
+0x7a5693063000    : 0          1          1          0          1         
+0x7a5693064000    : 0          1          1          0          1         
+0x7a5693065000    : 0          1          1          0          1         
+0x7a5693066000    : 0          1          1          0          1         
+0x7a5693067000    : 0          1          1          0          1         
+0x7a5693068000    : 0          1          1          0          1         
+0x7a5693069000    : 0          1          1          0          1         
+0x7a569306a000    : 0          1          1          0          1         
+0x7a569306b000    : 0          1          1          0          1         
+0x7a569306c000    : 0          1          1          0          1         
+0x7a569306d000    : 0          1          1          0          1         
+0x7a569306e000    : 0          1          1          0          1         
+0x7a569306f000    : 0          1          1          0          1         
+0x7a5693070000    : 0          1          1          0          1         
+0x7a5693071000    : 0          1          1          0          1         
+0x7a5693072000    : 0          1          1          0          1         
+0x7a5693073000    : 0          1          1          0          1         
+0x7a5693074000    : 0          1          1          0          1         
+0x7a5693075000    : 0          1          1          0          1         
+0x7a5693076000    : 0          1          1          0          1         
+0x7a5693077000    : 0          1          1          0          1         
+0x7a5693078000    : 0          1          1          0          1         
+0x7a5693079000    : 0          1          1          0          1         
+0x7a569307a000    : 0          1          1          0          1         
+0x7a569307b000    : 0          1          1          0          1         
+0x7a569307c000    : 0          1          1          0          1         
+0x7a569307d000    : 0          1          1          0          1         
+0x7a569307e000    : 0          1          1          0          1         
+0x7a569307f000    : 0          1          1          0          1         
+0x7a5693080000    : 0          1          1          0          1         
+0x7a5693081000    : 0          1          1          0          1         
+0x7a5693082000    : 0          1          1          0          1         
+0x7a5693083000    : 0          1          1          0          1         
+0x7a5693084000    : 0          1          1          0          1         
+0x7a5693085000    : 0          1          1          0          1         
+0x7a5693086000    : 0          1          1          0          1         
+0x7a5693087000    : 0          1          1          0          1         
+0x7a5693088000    : 0          1          1          0          1         
+0x7a5693089000    : 0          1          1          0          1         
+0x7a569308a000    : 0          1          1          0          1         
+0x7a569308b000    : 0          1          1          0          1         
+0x7a569308c000    : 0          1          1          0          1         
+0x7a569308d000    : 0          1          1          0          1         
+0x7a569308e000    : 0          1          1          0          1         
+0x7a569308f000    : 0          1          1          0          1         
+0x7a5693090000    : 0          1          1          0          1         
+0x7a5693091000    : 0          1          1          0          1         
+0x7a5693092000    : 0          1          1          0          1         
+0x7a5693093000    : 0          1          1          0          1         
+0x7a5693094000    : 0          1          1          0          1         
+0x7a5693095000    : 0          1          1          0          1         
+0x7a5693096000    : 0          1          1          0          1         
+0x7a5693097000    : 0          1          1          0          1         
+0x7a5693098000    : 0          1          1          0          1         
+0x7a5693099000    : 0          1          1          0          1         
+0x7a569309a000    : 0          1          1          0          1         
+0x7a569309b000    : 0          1          1          0          1         
+0x7a569309c000    : 0          1          1          0          1         
+0x7a569309d000    : 0          1          1          0          1         
+0x7a569309e000    : 0          1          1          0          1         
+0x7a569309f000    : 0          1          1          0          1         
+0x7a56930a0000    : 0          1          1          0          1         
+0x7a56930a1000    : 0          1          1          0          1         
+0x7a56930a2000    : 0          1          1          0          1         
+0x7a56930a3000    : 0          1          1          0          1         
+0x7a56930a4000    : 0          1          1          0          1         
+0x7a56930a5000    : 0          1          1          0          1         
+0x7a56930a6000    : 0          1          1          0          1         
+0x7a56930a7000    : 0          1          1          0          1         
+0x7a56930a8000    : 0          1          1          0          1         
+0x7a56930a9000    : 0          1          1          0          1         
+0x7a56930aa000    : 0          1          1          0          1         
+0x7a56930ab000    : 0          1          1          0          1         
+0x7a56930ac000    : 0          1          1          0          1         
+0x7a56930ad000    : 0          1          1          0          1         
+0x7a56930ae000    : 0          1          1          0          1         
+0x7a56930af000    : 0          1          1          0          1         
+0x7a56930b0000    : 0          1          1          0          1         
+0x7a56930b1000    : 0          1          1          0          1         
+0x7a56930b2000    : 0          1          1          0          1         
+0x7a56930b3000    : 0          1          1          0          1         
+0x7a56930b4000    : 0          1          1          0          1         
+0x7a56930b5000    : 0          1          1          0          1         
+0x7a56930b6000    : 0          1          1          0          1         
+0x7a56930b7000    : 0          1          1          0          1         
+0x7a56930b8000    : 0          1          1          0          1         
+0x7a56930b9000    : 0          1          1          0          1         
+0x7a56930ba000    : 0          1          1          0          1         
+0x7a56930bb000    : 0          1          1          0          1         
+0x7a56930bc000    : 0          1          1          0          1         
+0x7a56930bd000    : 0          1          1          0          1         
+0x7a56930be000    : 0          1          1          0          1         
+0x7a56930bf000    : 0          1          1          0          1         
+0x7a56930c0000    : 0          1          1          0          1         
+0x7a56930c1000    : 0          1          1          0          1         
+0x7a56930c2000    : 0          1          1          0          1         
+0x7a56930c3000    : 0          1          1          0          1         
+0x7a56930c4000    : 0          1          1          0          1         
+0x7a56930c5000    : 0          1          1          0          1         
+0x7a56930c6000    : 0          1          1          0          1         
+0x7a56930c7000    : 0          1          1          0          1         
+0x7a56930c8000    : 0          1          1          0          1         
+0x7a56930c9000    : 0          1          1          0          1         
+0x7a56930ca000    : 0          1          1          0          1         
+0x7a56930cb000    : 0          1          1          0          1         
+0x7a56930cc000    : 0          1          1          0          1         
+0x7a56930cd000    : 0          1          1          0          1         
+0x7a56930ce000    : 0          1          1          0          1         
+0x7a56930cf000    : 0          1          1          0          1         
+0x7a56930d0000    : 0          1          1          0          1         
+0x7a56930d1000    : 0          1          1          0          1         
+0x7a56930d2000    : 0          1          1          0          1         
+0x7a56930d3000    : 0          1          1          0          1         
+0x7a56930d4000    : 0          1          1          0          1         
+0x7a56930d5000    : 0          1          1          0          1         
+0x7a56930d6000    : 0          1          1          0          1         
+0x7a56930d7000    : 0          1          1          0          1         
+0x7a56930d8000    : 0          1          1          0          1         
+0x7a56930d9000    : 0          1          1          0          1         
+0x7a56930da000    : 0          1          1          0          1         
+0x7a56930db000    : 0          1          1          0          1         
+0x7a56930dc000    : 0          1          1          0          1         
+0x7a56930dd000    : 0          1          1          0          1         
+0x7a56930de000    : 0          1          1          0          1         
+0x7a56930df000    : 0          1          1          0          1         
+0x7a56930e0000    : 0          1          1          0          1         
+0x7a56930e1000    : 0          1          1          0          1         
+0x7a56930e2000    : 0          1          1          0          1         
+0x7a56930e3000    : 0          1          1          0          1         
+0x7a56930e4000    : 0          1          1          0          1         
+0x7a56930e5000    : 0          1          1          0          1         
+0x7a56930e6000    : 0          1          1          0          1         
+0x7a56930e7000    : 0          1          1          0          1         
+0x7a56930e8000    : 0          1          1          0          1         
+0x7a56930e9000    : 0          1          1          0          1         
+0x7a56930ea000    : 0          1          1          0          1         
+0x7a56930eb000    : 0          1          1          0          1         
+0x7a56930ec000    : 0          1          1          0          1         
+0x7a56930ed000    : 0          1          1          0          1         
+0x7a56930ee000    : 0          1          1          0          1         
+0x7a56930ef000    : 0          1          1          0          1         
+0x7a56930f0000    : 0          1          0          0          0         
+0x7a56930f1000    : 0          1          0          0          0         
+0x7a56930f2000    : 0          1          0          0          0         
+0x7a56930f3000    : 0          1          0          0          0         
+0x7a56930f4000    : 0          1          0          0          0         
+0x7a56930f5000    : 0          1          0          0          0         
+0x7a56930f6000    : 0          1          0          0          0         
+0x7a56930f7000    : 0          1          0          0          0         
+0x7a56930f8000    : 0          1          0          0          0         
+0x7a56930f9000    : 0          1          0          0          0         
+0x7a56930fa000    : 0          1          0          0          0         
+0x7a56930fb000    : 0          1          0          0          0         
+0x7a56930fc000    : 0          1          0          0          0         
+0x7a56930fd000    : 0          1          0          0          0         
+0x7a56930fe000    : 0          1          0          0          0         
+0x7a56930ff000    : 0          1          0          0          0         
+0x7a5693100000    : 0          1          0          0          0         
+0x7a5693101000    : 0          1          0          0          0         
+0x7a5693102000    : 0          1          0          0          0         
+0x7a5693103000    : 0          1          0          0          0         
+0x7a5693104000    : 0          1          0          0          0         
+0x7a5693105000    : 0          1          0          0          0         
+0x7a5693106000    : 0          1          0          0          0         
+0x7a5693107000    : 0          1          0          0          0         
+0x7a5693108000    : 0          1          0          0          0         
+0x7a5693109000    : 0          1          0          0          0         
+0x7a569310a000    : 0          1          0          0          0         
+0x7a569310b000    : 0          1          0          0          0         
+0x7a569310c000    : 0          1          0          0          0         
+0x7a569310d000    : 0          1          0          0          0         
+0x7a569310e000    : 0          1          0          0          0         
+0x7a569310f000    : 0          1          0          0          0         
+0x7a5693110000    : 0          1          1          0          1         
+0x7a5693111000    : 0          1          1          0          1         
+0x7a5693112000    : 0          1          1          0          1         
+0x7a5693113000    : 0          1          1          0          1         
+0x7a5693114000    : 0          1          1          0          1         
+0x7a5693115000    : 0          1          1          0          1         
+0x7a5693116000    : 0          1          1          0          1         
+0x7a5693117000    : 0          1          1          0          1         
+0x7a5693118000    : 0          1          1          0          1         
+0x7a5693119000    : 0          1          1          0          1         
+0x7a569311a000    : 0          1          1          0          1         
+0x7a569311b000    : 0          1          1          0          1         
+0x7a569311c000    : 0          1          1          0          1         
+0x7a569311d000    : 0          1          1          0          1         
+0x7a569311e000    : 0          1          1          0          1         
+0x7a569311f000    : 0          1          1          0          1         
+0x7a5693120000    : 0          1          1          0          1         
+0x7a5693121000    : 0          1          1          0          1         
+0x7a5693122000    : 0          1          1          0          1         
+0x7a5693123000    : 0          1          1          0          1         
+0x7a5693124000    : 0          1          1          0          1         
+0x7a5693125000    : 0          1          1          0          1         
+0x7a5693126000    : 0          1          1          0          1         
+0x7a5693127000    : 0          1          1          0          1         
+0x7a5693128000    : 0          1          1          0          1         
+0x7a5693129000    : 0          1          1          0          1         
+0x7a569312a000    : 0          1          1          0          1         
+0x7a569312b000    : 0          1          1          0          1         
+0x7a569312c000    : 0          1          1          0          1         
+0x7a569312d000    : 0          1          1          0          1         
+0x7a569312e000    : 0          1          1          0          1         
+0x7a569312f000    : 0          1          1          0          1         
+0x7a5693130000    : 0          1          1          0          1         
+0x7a5693131000    : 0          1          1          0          1         
+0x7a5693132000    : 0          1          1          0          1         
+0x7a5693133000    : 0          1          1          0          1         
+0x7a5693134000    : 0          1          1          0          1         
+0x7a5693135000    : 0          1          1          0          1         
+0x7a5693136000    : 0          1          1          0          1         
+0x7a5693137000    : 0          1          1          0          1         
+0x7a5693138000    : 0          1          1          0          1         
+0x7a5693139000    : 0          1          1          0          1         
+0x7a569313a000    : 0          1          1          0          1         
+0x7a569313b000    : 0          1          1          0          1         
+0x7a569313c000    : 0          1          1          0          1         
+0x7a569313d000    : 0          1          1          0          1         
+0x7a569313e000    : 0          1          1          0          1         
+0x7a569313f000    : 0          1          1          0          1         
+0x7a5693140000    : 0          1          1          0          1         
+0x7a5693141000    : 0          1          1          0          1         
+0x7a5693142000    : 0          1          1          0          1         
+0x7a5693143000    : 0          1          1          0          1         
+0x7a5693144000    : 0          1          1          0          1         
+0x7a5693145000    : 0          1          1          0          1         
+0x7a5693146000    : 0          1          1          0          1         
+0x7a5693147000    : 0          1          1          0          1         
+0x7a5693148000    : 0          1          1          0          1         
+0x7a5693149000    : 0          1          1          0          1         
+0x7a569314a000    : 0          1          1          0          1         
+0x7a569314b000    : 0          1          1          0          1         
+0x7a569314c000    : 0          1          1          0          1         
+0x7a569314d000    : 0          1          1          0          1         
+0x7a569314e000    : 0          1          1          0          1         
+0x7a569314f000    : 0          1          1          0          1         
+0x7a5693150000    : 0          1          0          0          0         
+0x7a5693151000    : 0          1          0          0          0         
+0x7a5693152000    : 0          1          0          0          0         
+0x7a5693153000    : 0          1          0          0          0         
+0x7a5693154000    : 0          1          0          0          0         
+0x7a5693155000    : 0          1          0          0          0         
+0x7a5693156000    : 0          1          0          0          0         
+0x7a5693157000    : 0          1          0          0          0         
+0x7a5693158000    : 0          1          0          0          0         
+0x7a5693159000    : 0          1          0          0          0         
+0x7a569315a000    : 0          1          0          0          0         
+0x7a569315b000    : 0          1          0          0          0         
+0x7a569315c000    : 0          1          0          0          0         
+0x7a569315d000    : 0          1          0          0          0         
+0x7a569315e000    : 0          1          0          0          0         
+0x7a569315f000    : 0          1          0          0          0         
+0x7a5693160000    : 0          1          0          0          0         
+0x7a5693161000    : 0          1          0          0          0         
+0x7a5693162000    : 0          1          0          0          0         
+0x7a5693163000    : 0          1          0          0          0         
+0x7a5693164000    : 0          1          0          0          0         
+0x7a5693165000    : 0          1          0          0          0         
+0x7a5693166000    : 0          1          0          0          0         
+0x7a5693167000    : 0          1          0          0          0         
+0x7a5693168000    : 0          1          0          0          0         
+0x7a5693169000    : 0          1          0          0          0         
+0x7a569316a000    : 0          1          0          0          0         
+0x7a569316b000    : 0          1          0          0          0         
+0x7a569316c000    : 0          1          0          0          0         
+0x7a569316d000    : 0          1          0          0          0         
+0x7a569316e000    : 0          1          0          0          0         
+0x7a569316f000    : 0          1          0          0          0         
+0x7a5693170000    : 0          1          1          0          1         
+0x7a5693171000    : 0          1          1          0          1         
+0x7a5693172000    : 0          1          1          0          1         
+0x7a5693173000    : 0          1          1          0          1         
+0x7a5693174000    : 0          1          1          0          1         
+0x7a5693175000    : 0          1          1          0          1         
+0x7a5693176000    : 0          1          1          0          1         
+0x7a5693177000    : 0          1          1          0          1         
+0x7a5693178000    : 0          1          1          0          1         
+0x7a5693179000    : 0          1          1          0          1         
+0x7a569317a000    : 0          1          1          0          1         
+0x7a569317b000    : 0          1          1          0          1         
+0x7a569317c000    : 0          1          1          0          1         
+0x7a569317d000    : 0          1          1          0          1         
+0x7a569317e000    : 0          1          1          0          1         
+0x7a569317f000    : 0          1          1          0          1         
+0x7a5693180000    : 0          1          0          0          0         
+0x7a5693181000    : 0          1          0          0          0         
+0x7a5693182000    : 0          1          0          0          0         
+0x7a5693183000    : 0          1          0          0          0         
+0x7a5693184000    : 0          1          0          0          0         
+0x7a5693185000    : 0          1          0          0          0         
+0x7a5693186000    : 0          1          0          0          0         
+0x7a5693187000    : 0          1          0          0          0         
+0x7a5693188000    : 0          1          0          0          0         
+0x7a5693189000    : 0          1          0          0          0         
+0x7a569318a000    : 0          1          0          0          0         
+0x7a569318b000    : 0          1          0          0          0         
+0x7a569318c000    : 0          1          0          0          0         
+0x7a569318d000    : 0          1          0          0          0         
+0x7a569318e000    : 0          1          0          0          0         
+0x7a569318f000    : 0          1          0          0          0         
+0x7a5693190000    : 0          1          1          0          1         
+0x7a5693191000    : 0          1          1          0          1         
+0x7a5693192000    : 0          1          1          0          1         
+0x7a5693193000    : 0          1          1          0          1         
+0x7a5693194000    : 0          1          1          0          1         
+0x7a5693195000    : 0          1          1          0          1         
+0x7a5693196000    : 0          1          1          0          1         
+0x7a5693197000    : 0          1          1          0          1         
+0x7a5693198000    : 0          1          1          0          1         
+0x7a5693199000    : 0          1          1          0          1         
+0x7a569319a000    : 0          1          1          0          1         
+0x7a569319b000    : 0          1          1          0          1         
+0x7a569319c000    : 0          1          1          0          1         
+0x7a569319d000    : 0          1          1          0          1         
+0x7a569319e000    : 0          1          1          0          1         
+0x7a569319f000    : 0          1          1          0          1         
+0x7a56931a0000    : 0          1          1          0          1         
+0x7a56931a1000    : 0          1          1          0          1         
+0x7a56931a2000    : 0          1          1          0          1         
+0x7a56931a3000    : 0          1          1          0          1         
+0x7a56931a4000    : 0          1          1          0          1         
+0x7a56931a5000    : 0          1          1          0          1         
+0x7a56931a6000    : 0          1          1          0          1         
+0x7a56931a7000    : 0          1          1          0          1         
+0x7a56931a8000    : 0          1          1          0          1         
+0x7a56931a9000    : 0          1          1          0          1         
+0x7a56931aa000    : 0          1          1          0          1         
+0x7a56931ab000    : 0          1          1          0          1         
+0x7a56931ac000    : 0          1          1          0          1         
+0x7a56931ad000    : 0          1          1          0          1         
+0x7a56931ae000    : 0          1          1          0          1         
+0x7a56931af000    : 0          1          1          0          1         
+0x7a56931b0000    : 0          1          0          0          0         
+0x7a56931b1000    : 0          1          0          0          0         
+0x7a56931b2000    : 0          1          0          0          0         
+0x7a56931b3000    : 0          1          0          0          0         
+0x7a56931b4000    : 0          1          0          0          0         
+0x7a56931b5000    : 0          1          0          0          0         
+0x7a56931b6000    : 0          1          0          0          0         
+0x7a56931b7000    : 0          1          0          0          0         
+0x7a56931b8000    : 0          1          0          0          0         
+0x7a56931b9000    : 0          1          0          0          0         
+0x7a56931ba000    : 0          1          0          0          0         
+0x7a56931bb000    : 0          1          0          0          0         
+0x7a56931bc000    : 0          1          0          0          0         
+0x7a56931bd000    : 0          1          1          0          1         
+0x7a56931be000    : 0          1          1          0          1         
+0x7a56931bf000    : 0          1          1          0          1         
+0x7a56931c0000    : 0          1          1          0          1         
+0x7a56931c1000    : 0          1          1          0          1         
+0x7a56931c2000    : 0          1          1          0          1         
+0x7a56931c3000    : 0          1          1          0          1         
+0x7a56931c4000    : 0          1          1          0          1         
+0x7a56931c5000    : 0          1          1          0          1         
+0x7a56931c6000    : 0          1          1          0          1         
+0x7a56931c7000    : 0          1          1          0          1         
+0x7a56931c8000    : 0          1          1          0          1         
+0x7a56931c9000    : 0          1          1          0          1         
+0x7a56931ca000    : 0          1          1          0          1         
+0x7a56931cb000    : 0          1          1          0          1         
+0x7a56931cc000    : 0          1          1          0          1         
+0x7a56931cd000    : 0          1          0          0          0         
+0x7a56931ce000    : 0          1          0          0          0         
+0x7a56931cf000    : 0          1          0          0          0         
+0x7a56931d0000    : 0          1          1          0          1         
+0x7a56931d1000    : 0          1          1          0          1         
+0x7a56931d2000    : 0          1          1          0          1         
+0x7a56931d3000    : 0          1          1          0          1         
+0x7a56931d4000    : 0          1          1          0          1         
+0x7a56931d5000    : 0          1          1          0          1         
+0x7a56931d6000    : 0          1          1          0          1         
+0x7a56931d7000    : 0          1          1          0          1         
+0x7a56931d8000    : 0          1          1          0          1         
+0x7a56931d9000    : 0          1          1          0          1         
+0x7a56931da000    : 0          1          1          0          1         
+0x7a56931db000    : 0          1          1          0          1         
+0x7a56931dc000    : 0          1          1          0          1         
+0x7a56931dd000    : 0          1          1          0          1         
+0x7a56931de000    : 0          1          1          0          1         
+0x7a56931df000    : 0          1          1          0          1         
+0x7a56931e0000    : 0          1          1          0          1         
+0x7a56931e1000    : 0          1          1          0          1         
+0x7a56931e2000    : 0          1          1          0          1         
+0x7a56931e3000    : 0          1          1          0          1         
+0x7a56931e4000    : 0          1          1          0          1         
+0x7a56931e5000    : 0          1          1          0          1         
+0x7a56931e6000    : 0          1          1          0          1         
+0x7a56931e7000    : 0          1          1          0          1         
+0x7a56931e8000    : 0          1          1          0          1         
+0x7a56931e9000    : 0          1          1          0          1         
+0x7a56931ea000    : 0          1          1          0          1         
+0x7a56931eb000    : 0          1          1          0          1         
+0x7a56931ec000    : 0          1          1          0          1         
+0x7a56931ed000    : 0          1          1          0          1         
+0x7a56931ee000    : 0          1          1          0          1         
+0x7a56931ef000    : 0          1          1          0          1         
+0x7a56931f0000    : 0          1          0          0          0         
+0x7a56931f1000    : 0          1          0          0          0         
+0x7a56931f2000    : 0          1          0          0          0         
+0x7a56931f3000    : 0          1          0          0          0         
+0x7a56931f4000    : 0          1          0          0          0         
+0x7a56931f5000    : 0          1          0          0          0         
+0x7a56931f6000    : 0          1          0          0          0         
+0x7a56931f7000    : 0          1          0          0          0         
+0x7a56931f8000    : 0          1          0          0          0         
+0x7a56931f9000    : 0          1          0          0          0         
+0x7a56931fa000    : 0          1          0          0          0         
+0x7a56931fb000    : 0          1          0          0          0         
+0x7a56931fc000    : 0          1          0          0          0         
+0x7a56931fd000    : 0          1          0          0          0         
+0x7a56931fe000    : 0          1          0          0          0         
+0x7a56931ff000    : 0          1          0          0          0         
+0x7a5693200000    : 0          1          0          0          0         
+0x7a5693201000    : 0          1          0          0          0         
+0x7a5693202000    : 0          1          0          0          0         
+0x7a5693203000    : 0          1          0          0          0         
+0x7a5693204000    : 0          1          0          0          0         
+0x7a5693205000    : 0          1          0          0          0         
+0x7a5693206000    : 0          1          0          0          0         
+0x7a5693207000    : 0          1          0          0          0         
+0x7a5693208000    : 0          1          0          0          0         
+0x7a5693209000    : 0          1          0          0          0         
+0x7a569320a000    : 0          1          0          0          0         
+0x7a569320b000    : 0          1          0          0          0         
+0x7a569320c000    : 0          1          0          0          0         
+0x7a569320d000    : 0          1          0          0          0         
+0x7a569320e000    : 0          1          0          0          0         
+0x7a569320f000    : 0          1          0          0          0         
+0x7a5693210000    : 0          1          0          0          0         
+0x7a5693211000    : 0          1          0          0          0         
+0x7a5693212000    : 0          1          0          0          0         
+0x7a5693213000    : 0          1          0          0          0         
+0x7a5693214000    : 0          1          0          0          0         
+0x7a5693215000    : 0          1          0          0          0         
+0x7a5693216000    : 0          1          0          0          1         
+0x7a5693217000    : 0          1          0          0          1         
+0x7a5693218000    : 0          1          0          0          1         
+0x7a5693219000    : 0          1          0          0          1         
+0x7a569321a000    : 0          1          0          0          1         
+0x7a569321b000    : 0          1          0          0          1         
+0x7a569321c000    : 0          1          0          0          1         
+0x7a569321d000    : 0          1          0          0          0         
+0x7a569321e000    : 0          1          0          0          0         
+0x7a569321f000    : 0          1          0          0          0         
+0x7a5693220000    : 0          1          0          0          1         
+0x7a5693221000    : 0          1          0          0          1         
+0x7a5693222000    : 0          1          0          0          1         
+0x7a5693223000    : 0          1          0          0          0         
+0x7a5693224000    : 0          1          0          0          0         
+0x7a5693225000    : 0          1          0          0          0         
+0x7a5693226000    : 0          1          0          0          0         
+0x7a5693227000    : 0          1          0          0          0         
+0x7a5693228000    : 0          1          0          0          1         
+0x7a5693285000    : 0          1          0          0          1         
+0x7a5693286000    : 0          1          0          0          0         
+0x7a5693287000    : 0          1          0          0          1         
+0x7a5693288000    : 0          1          0          0          1         
+0x7a5693289000    : 0          1          1          0          1         
+0x7a569328a000    : 0          1          1          0          1         
+0x7a569328b000    : 0          1          1          0          1         
+0x7a569328c000    : 0          1          1          0          1         
+0x7a569328d000    : 0          1          1          0          1         
+0x7a569328e000    : 0          1          1          0          1         
+0x7a569328f000    : 0          1          1          0          1         
+0x7a5693290000    : 0          1          1          0          1         
+0x7a5693291000    : 0          1          1          0          1         
+0x7a5693292000    : 0          1          0          0          0         
+0x7a5693293000    : 0          1          1          0          1         
+0x7a5693294000    : 0          1          1          0          1         
+0x7a5693295000    : 0          1          1          0          1         
+0x7a5693296000    : 0          1          0          0          0         
+0x7a5693297000    : 0          1          0          0          0         
+0x7a5693298000    : 0          1          0          0          0         
+0x7a5693299000    : 0          1          0          0          1         
+0x7a569329a000    : 0          1          0          0          1         
+0x7a569329b000    : 0          1          0          0          0         
+0x7a569329c000    : 0          1          0          0          0         
+0x7a569329d000    : 0          1          1          0          1         
+0x7a569329e000    : 0          1          1          0          1         
+0x7a569329f000    : 0          1          1          0          1         
+0x7a56932a0000    : 0          1          1          0          1         
+0x7a56932a1000    : 0          1          0          0          0         
+0x7a56932a2000    : 0          1          0          0          1         
+0x7a56932a3000    : 0          1          0          0          1         
+0x7a56932a4000    : 0          1          1          0          1         
+0x7a56932a5000    : 0          1          1          0          1         
+0x7a56932a6000    : 0          1          1          0          1         
+0x7a56932a7000    : 0          1          1          0          1         
+0x7a56932a8000    : 0          1          1          0          1         
+0x7a56932a9000    : 0          1          1          0          1         
+0x7a56932aa000    : 0          1          1          0          1         
+0x7a56932ab000    : 0          1          1          0          1         
+0x7a56932ac000    : 0          1          1          0          1         
+0x7a56932ad000    : 0          1          0          0          0         
+0x7a56932ae000    : 0          1          0          0          0         
+0x7a56932af000    : 0          1          0          0          0         
+0x7a56932b0000    : 0          1          0          0          1         
+0x7a56932b1000    : 0          1          0          0          1         
+0x7a56932b2000    : 0          1          1          0          1         
+0x7a56932b3000    : 0          1          1          0          1         
+0x7a56932b4000    : 0          1          1          0          1         
+0x7a56932b5000    : 0          1          0          0          0         
+0x7a56932b6000    : 0          1          0          0          1         
+0x7a56932b7000    : 0          1          0          0          1         
+0x7a56932ba000    : 0          1          1          0          1         
+0x7a56932bb000    : 0          1          1          0          1         
+0x7a56932bc000    : 0          1          1          0          1         
+0x7a56932bd000    : 0          1          1          0          1         
+0x7a56932be000    : 0          1          1          0          1         
+0x7a56932bf000    : 0          1          1          0          1         
+0x7a56932c0000    : 0          1          1          0          1         
+0x7a56932c1000    : 0          1          1          0          1         
+0x7a56932c2000    : 0          1          1          0          1         
+0x7a56932c3000    : 0          1          1          0          1         
+0x7a56932c4000    : 0          1          1          0          1         
+0x7a56932c5000    : 0          1          1          0          1         
+0x7a56932c6000    : 0          1          1          0          1         
+0x7a56932c7000    : 0          1          1          0          1         
+0x7a56932c8000    : 0          1          1          0          1         
+0x7a56932c9000    : 0          1          1          0          1         
+0x7a56932ca000    : 0          1          1          0          1         
+0x7a56932cb000    : 0          1          1          0          1         
+0x7a56932cc000    : 0          1          1          0          1         
+0x7a56932cd000    : 0          1          1          0          1         
+0x7a56932ce000    : 0          1          0          0          0         
+0x7a56932cf000    : 0          1          0          0          0         
+0x7a56932d0000    : 0          1          0          0          0         
+0x7a56932d1000    : 0          1          0          0          0         
+0x7a56932d2000    : 0          1          0          0          0         
+0x7a56932d3000    : 0          1          0          0          0         
+0x7a56932d4000    : 0          1          0          0          0         
+0x7a56932d5000    : 0          1          0          0          0         
+0x7a56932d6000    : 0          1          0          0          0         
+0x7a56932d7000    : 0          1          0          0          0         
+0x7a56932d8000    : 0          1          0          0          0         
+0x7a56932d9000    : 0          1          0          0          0         
+0x7a56932da000    : 0          1          0          0          0         
+0x7a56932db000    : 0          1          0          0          0         
+0x7a56932dc000    : 0          1          0          0          0         
+0x7a56932dd000    : 0          1          0          0          0         
+0x7a56932de000    : 0          1          0          0          0         
+0x7a56932df000    : 0          1          0          0          0         
+0x7a56932e0000    : 0          1          0          0          0         
+0x7a56932e1000    : 0          1          0          0          0         
+0x7a56932e2000    : 0          1          0          0          0         
+0x7a56932e3000    : 0          1          0          0          0         
+0x7a56932e4000    : 0          1          0          0          0         
+0x7a56932e5000    : 0          1          0          0          0         
+0x7a56932e6000    : 0          1          0          0          1         
+0x7a56932e7000    : 0          1          0          0          1         
+0x7a56932e8000    : 0          1          0          0          0         
+0x7a56932e9000    : 0          1          1          0          1         
+0x7a56932ea000    : 0          1          1          0          1         
+0x7a56932eb000    : 0          1          1          0          1         
+0x7a56932ec000    : 0          1          1          0          1         
+0x7a56932ed000    : 0          1          1          0          1         
+0x7a56932ee000    : 0          1          1          0          1         
+0x7a56932ef000    : 0          1          1          0          1         
+0x7a56932f0000    : 0          1          1          0          1         
+0x7a56932f1000    : 0          1          1          0          1         
+0x7a56932f2000    : 0          1          1          0          1         
+0x7a56932f3000    : 0          1          1          0          1         
+0x7a56932f4000    : 0          1          1          0          1         
+0x7a56932f5000    : 0          1          1          0          1         
+0x7a56932f6000    : 0          1          1          0          1         
+0x7a56932f7000    : 0          1          1          0          1         
+0x7a56932f8000    : 0          1          1          0          1         
+0x7a56932f9000    : 0          1          1          0          1         
+0x7a56932fa000    : 0          1          1          0          1         
+0x7a56932fb000    : 0          1          1          0          1         
+0x7a56932fc000    : 0          1          1          0          1         
+0x7a56932fd000    : 0          1          1          0          1         
+0x7a56932fe000    : 0          1          1          0          1         
+0x7a56932ff000    : 0          1          1          0          1         
+0x7a5693300000    : 0          1          1          0          1         
+0x7a5693301000    : 0          1          1          0          1         
+0x7a5693302000    : 0          1          1          0          1         
+0x7a5693303000    : 0          1          1          0          1         
+0x7a5693304000    : 0          1          1          0          1         
+0x7a5693305000    : 0          1          1          0          1         
+0x7a5693306000    : 0          1          1          0          1         
+0x7a5693307000    : 0          1          1          0          1         
+0x7a5693308000    : 0          1          1          0          1         
+0x7a5693309000    : 0          1          1          0          1         
+0x7a569330a000    : 0          1          1          0          1         
+0x7a569330b000    : 0          1          1          0          1         
+0x7a569330c000    : 0          1          1          0          1         
+0x7a569330d000    : 0          1          1          0          1         
+0x7a569330e000    : 0          1          1          0          1         
+0x7a569330f000    : 0          1          1          0          1         
+0x7a5693310000    : 0          1          1          0          1         
+0x7a5693311000    : 0          1          1          0          1         
+0x7a5693312000    : 0          1          1          0          1         
+0x7a5693313000    : 0          1          1          0          1         
+0x7a5693314000    : 0          1          1          0          1         
+0x7a5693315000    : 0          1          1          0          1         
+0x7a5693316000    : 0          1          1          0          1         
+0x7a5693317000    : 0          1          1          0          1         
+0x7a5693318000    : 0          1          1          0          1         
+0x7a5693319000    : 0          1          1          0          1         
+0x7a569331a000    : 0          1          0          0          0         
+0x7a569331b000    : 0          1          0          0          0         
+0x7a569331c000    : 0          1          0          0          0         
+0x7a569331d000    : 0          1          0          0          0         
+0x7a569331e000    : 0          1          0          0          0         
+0x7a569331f000    : 0          1          0          0          0         
+0x7a5693320000    : 0          1          0          0          0         
+0x7a5693321000    : 0          1          0          0          0         
+0x7a5693322000    : 0          1          0          0          0         
+0x7a5693323000    : 0          1          0          0          0         
+0x7a5693324000    : 0          1          0          0          0         
+0x7a5693325000    : 0          1          0          0          0         
+0x7a5693326000    : 0          1          0          0          0         
+0x7a5693327000    : 0          1          0          0          0         
+0x7a5693328000    : 0          1          0          0          0         
+0x7a5693329000    : 0          1          0          0          0         
+0x7a569332a000    : 0          1          0          0          0         
+0x7a569332b000    : 0          1          0          0          0         
+0x7a569332c000    : 0          1          0          0          0         
+0x7a569332d000    : 0          1          0          0          0         
+0x7a569332e000    : 0          1          0          0          0         
+0x7a569332f000    : 0          1          0          0          0         
+0x7a5693330000    : 0          1          0          0          0         
+0x7a5693331000    : 0          1          0          0          0         
+0x7a5693332000    : 0          1          0          0          0         
+0x7a5693333000    : 0          1          0          0          0         
+0x7a5693334000    : 0          1          0          0          0         
+0x7a5693335000    : 0          1          0          0          0         
+0x7a5693336000    : 0          1          0          0          0         
+0x7a5693337000    : 0          1          0          0          0         
+0x7a5693338000    : 0          1          0          0          0         
+0x7a5693339000    : 0          1          0          0          0         
+0x7a569333a000    : 0          1          0          0          0         
+0x7a569333b000    : 0          1          0          0          0         
+0x7a569333c000    : 0          1          0          0          0         
+0x7a569333d000    : 0          1          0          0          0         
+0x7a569333e000    : 0          1          0          0          0         
+0x7a569333f000    : 0          1          0          0          0         
+0x7a5693340000    : 0          1          0          0          0         
+0x7a5693341000    : 0          1          0          0          0         
+0x7a5693342000    : 0          1          0          0          0         
+0x7a5693343000    : 0          1          0          0          0         
+0x7a5693344000    : 0          1          0          0          0         
+0x7a5693345000    : 0          1          0          0          0         
+0x7a5693346000    : 0          1          0          0          0         
+0x7a5693347000    : 0          1          0          0          0         
+0x7a5693348000    : 0          1          0          0          0         
+0x7a5693349000    : 0          1          0          0          0         
+0x7a569334a000    : 0          1          0          0          0         
+0x7a569334b000    : 0          1          0          0          0         
+0x7a569334c000    : 0          1          0          0          0         
+0x7a569334d000    : 0          1          0          0          0         
+0x7a569334e000    : 0          1          0          0          0         
+0x7a569334f000    : 0          1          0          0          0         
+0x7a5693350000    : 0          1          0          0          0         
+0x7a5693351000    : 0          1          0          0          0         
+0x7a5693352000    : 0          1          0          0          0         
+0x7a5693353000    : 0          1          0          0          0         
+0x7a5693354000    : 0          1          0          0          0         
+0x7a5693355000    : 0          1          0          0          0         
+0x7a5693356000    : 0          1          0          0          0         
+0x7a5693357000    : 0          1          0          0          0         
+0x7a5693358000    : 0          1          0          0          0         
+0x7a5693359000    : 0          1          0          0          0         
+0x7a569335a000    : 0          1          0          0          0         
+0x7a569335b000    : 0          1          0          0          0         
+0x7a569335c000    : 0          1          0          0          0         
+0x7a569335d000    : 0          1          0          0          0         
+0x7a569335e000    : 0          1          0          0          0         
+0x7a569335f000    : 0          1          0          0          0         
+0x7a5693360000    : 0          1          0          0          0         
+0x7a5693361000    : 0          1          0          0          0         
+0x7a5693362000    : 0          1          0          0          0         
+0x7a5693363000    : 0          1          0          0          0         
+0x7a5693364000    : 0          1          0          0          0         
+0x7a5693365000    : 0          1          0          0          0         
+0x7a5693366000    : 0          1          0          0          0         
+0x7a5693367000    : 0          1          0          0          0         
+0x7a5693368000    : 0          1          0          0          0         
+0x7a5693369000    : 0          1          0          0          0         
+0x7a569336a000    : 0          1          0          0          0         
+0x7a569336b000    : 0          1          0          0          0         
+0x7a569336c000    : 0          1          0          0          0         
+0x7a569336d000    : 0          1          0          0          0         
+0x7a569336e000    : 0          1          0          0          0         
+0x7a569336f000    : 0          1          0          0          0         
+0x7a5693370000    : 0          1          0          0          0         
+0x7a5693371000    : 0          1          0          0          0         
+0x7a5693372000    : 0          1          0          0          0         
+0x7a5693373000    : 0          1          0          0          0         
+0x7a5693374000    : 0          1          0          0          0         
+0x7a5693375000    : 0          1          0          0          0         
+0x7a5693376000    : 0          1          0          0          0         
+0x7a5693377000    : 0          1          0          0          0         
+0x7a5693378000    : 0          1          0          0          0         
+0x7a5693379000    : 0          1          0          0          0         
+0x7a569337a000    : 0          1          0          0          0         
+0x7a569337b000    : 0          1          0          0          0         
+0x7a569337c000    : 0          1          0          0          0         
+0x7a569337d000    : 0          1          0          0          0         
+0x7a569337e000    : 0          1          0          0          0         
+0x7a569337f000    : 0          1          0          0          0         
+0x7a5693380000    : 0          1          0          0          0         
+0x7a5693381000    : 0          1          0          0          0         
+0x7a5693382000    : 0          1          0          0          0         
+0x7a5693383000    : 0          1          0          0          0         
+0x7a5693384000    : 0          1          0          0          0         
+0x7a5693385000    : 0          1          0          0          0         
+0x7a5693386000    : 0          1          0          0          0         
+0x7a5693387000    : 0          1          0          0          0         
+0x7a5693388000    : 0          1          0          0          0         
+0x7a5693389000    : 0          1          0          0          0         
+0x7a569338a000    : 0          1          0          0          0         
+0x7a569338b000    : 0          1          0          0          0         
+0x7a569338c000    : 0          1          0          0          0         
+0x7a569338d000    : 0          1          0          0          0         
+0x7a569338e000    : 0          1          0          0          0         
+0x7a569338f000    : 0          1          0          0          0         
+0x7a5693390000    : 0          1          0          0          0         
+0x7a5693391000    : 0          1          0          0          0         
+0x7a5693392000    : 0          1          0          0          0         
+0x7a5693393000    : 0          1          0          0          0         
+0x7a5693394000    : 0          1          0          0          0         
+0x7a5693395000    : 0          1          0          0          0         
+0x7a5693396000    : 0          1          0          0          0         
+0x7a5693397000    : 0          1          0          0          0         
+0x7a5693398000    : 0          1          0          0          0         
+0x7a5693399000    : 0          1          0          0          0         
+0x7a569339a000    : 0          1          0          0          0         
+0x7a569339b000    : 0          1          0          0          0         
+0x7a569339c000    : 0          1          0          0          0         
+0x7a569339d000    : 0          1          0          0          0         
+0x7a569339e000    : 0          1          0          0          0         
+0x7a569339f000    : 0          1          0          0          0         
+0x7a56933a0000    : 0          1          0          0          0         
+0x7a56933a1000    : 0          1          0          0          0         
+0x7a56933a2000    : 0          1          0          0          0         
+0x7a56933a3000    : 0          1          0          0          0         
+0x7a56933a4000    : 0          1          0          0          0         
+0x7a56933a5000    : 0          1          0          0          1         
+0x7a56933a6000    : 0          1          0          0          1         
+0x7a56933a7000    : 0          1          0          0          1         
+0x7a56933a8000    : 0          1          0          0          1         
+0x7a56933a9000    : 0          1          0          0          1         
+0x7a56933aa000    : 0          1          0          0          1         
+0x7a56933ab000    : 0          1          0          0          1         
+0x7a56933ac000    : 0          1          0          0          1         
+0x7a56933ad000    : 0          1          0          0          1         
+0x7a56933ae000    : 0          1          0          0          1         
+0x7a56933af000    : 0          1          0          0          1         
+0x7a56933b0000    : 0          1          0          0          1         
+0x7a56933b1000    : 0          1          0          0          1         
+0x7a56933b2000    : 0          1          0          0          1         
+0x7a56933b3000    : 0          1          0          0          1         
+0x7a56933b4000    : 0          1          1          0          1         
+0x7a56933b5000    : 0          1          1          0          1         
+0x7a56933b6000    : 0          1          1          0          1         
+0x7a56933b7000    : 0          1          1          0          1         
+0x7a56933b8000    : 0          1          1          0          1         
+0x7a56933b9000    : 0          1          1          0          1         
+0x7a56933ba000    : 0          1          1          0          1         
+0x7a56933bb000    : 0          1          1          0          1         
+0x7a56933bc000    : 0          1          1          0          1         
+0x7a56933bd000    : 0          1          1          0          1         
+0x7a56933be000    : 0          1          1          0          1         
+0x7a56933bf000    : 0          1          1          0          1         
+0x7a56933c0000    : 0          1          1          0          1         
+0x7a56933c1000    : 0          1          1          0          1         
+0x7a56933c2000    : 0          1          1          0          1         
+0x7a56933c3000    : 0          1          1          0          1         
+0x7a56933c4000    : 0          1          1          0          1         
+0x7a56933c5000    : 0          1          1          0          1         
+0x7a56933c6000    : 0          1          1          0          1         
+0x7a56933c7000    : 0          1          1          0          1         
+0x7a56933c8000    : 0          1          1          0          1         
+0x7a56933c9000    : 0          1          1          0          1         
+0x7a56933ca000    : 0          1          1          0          1         
+0x7a56933cb000    : 0          1          1          0          1         
+0x7a56933cc000    : 0          1          1          0          1         
+0x7a56933cd000    : 0          1          1          0          1         
+0x7a56933ce000    : 0          1          1          0          1         
+0x7a56933cf000    : 0          1          0          0          0         
+0x7a56933d0000    : 0          1          0          0          0         
+0x7a56933d1000    : 0          1          0          0          0         
+0x7a56933d2000    : 0          1          0          0          0         
+0x7a56933d3000    : 0          1          0          0          0         
+0x7a56933d4000    : 0          1          0          0          0         
+0x7a56933d5000    : 0          1          0          0          0         
+0x7a56933d6000    : 0          1          0          0          0         
+0x7a56933d7000    : 0          1          0          0          0         
+0x7a56933d8000    : 0          1          0          0          0         
+0x7a56933d9000    : 0          1          0          0          0         
+0x7a56933da000    : 0          1          0          0          0         
+0x7a56933db000    : 0          1          0          0          0         
+0x7a56933dc000    : 0          1          0          0          0         
+0x7a56933dd000    : 0          1          0          0          0         
+0x7a56933de000    : 0          1          0          0          0         
+0x7a56933df000    : 0          1          0          0          0         
+0x7a56933e0000    : 0          1          0          0          0         
+0x7a56933e1000    : 0          1          0          0          0         
+0x7a56933e2000    : 0          1          0          0          0         
+0x7a56933e3000    : 0          1          0          0          0         
+0x7a56933e4000    : 0          1          0          0          0         
+0x7a56933e5000    : 0          1          0          0          0         
+0x7a56933e6000    : 0          1          0          0          0         
+0x7a56933e7000    : 0          1          0          0          0         
+0x7a56933e8000    : 0          1          0          0          0         
+0x7a56933e9000    : 0          1          0          0          0         
+0x7a56933ea000    : 0          1          0          0          0         
+0x7a56933eb000    : 0          1          0          0          0         
+0x7a56933ec000    : 0          1          0          0          0         
+0x7a56933ed000    : 0          1          0          0          0         
+0x7a56933ee000    : 0          1          0          0          0         
+0x7a56933ef000    : 0          1          0          0          0         
+0x7a56933f0000    : 0          1          0          0          0         
+0x7a56933f1000    : 0          1          0          0          0         
+0x7a56933f2000    : 0          1          0          0          0         
+0x7a56933f3000    : 0          1          0          0          0         
+0x7a56933f4000    : 0          1          0          0          0         
+0x7a56933f5000    : 0          1          0          0          0         
+0x7a56933f6000    : 0          1          0          0          0         
+0x7a56933f7000    : 0          1          0          0          0         
+0x7a56933f8000    : 0          1          0          0          0         
+0x7a56933f9000    : 0          1          0          0          0         
+0x7a56933fa000    : 0          1          0          0          0         
+0x7a56933fb000    : 0          1          0          0          0         
+0x7a56933fc000    : 0          1          0          0          0         
+0x7a56933fd000    : 0          1          0          0          0         
+0x7a56933fe000    : 0          1          0          0          0         
+0x7a56933ff000    : 0          1          0          0          0         
+0x7a5693400000    : 0          1          0          0          0         
+0x7a5693401000    : 0          1          0          0          0         
+0x7a5693402000    : 0          1          0          0          0         
+0x7a5693403000    : 0          1          0          0          0         
+0x7a5693404000    : 0          1          0          0          1         
+0x7a5693405000    : 0          1          0          0          1         
+0x7a5693406000    : 0          1          0          0          1         
+0x7a5693407000    : 0          1          0          0          1         
+0x7a5693408000    : 0          1          1          0          1         
+0x7a5693409000    : 0          1          1          0          1         
+0x7a569340a000    : 0          1          1          0          1         
+0x7a569340b000    : 0          1          1          0          1         
+0x7a569340c000    : 0          1          1          0          1         
+0x7a569340d000    : 0          1          1          0          1         
+0x7a569340e000    : 0          1          1          0          1         
+0x7a569340f000    : 0          1          1          0          1         
+0x7a5693410000    : 0          1          1          0          1         
+0x7a5693411000    : 0          1          1          0          1         
+0x7a5693412000    : 0          1          1          0          1         
+0x7a5693413000    : 0          1          1          0          1         
+0x7a5693414000    : 0          1          1          0          1         
+0x7a5693415000    : 0          1          1          0          1         
+0x7a5693416000    : 0          1          1          0          1         
+0x7a5693417000    : 0          1          1          0          1         
+0x7a5693418000    : 0          1          1          0          1         
+0x7a5693419000    : 0          1          1          0          1         
+0x7a569341a000    : 0          1          1          0          1         
+0x7a569341b000    : 0          1          1          0          1         
+0x7a569341c000    : 0          1          1          0          1         
+0x7a569341d000    : 0          1          1          0          1         
+0x7a569341e000    : 0          1          1          0          1         
+0x7a569341f000    : 0          1          1          0          1         
+0x7a5693420000    : 0          1          0          0          0         
+0x7a5693421000    : 0          1          1          0          1         
+0x7a5693422000    : 0          1          1          0          1         
+0x7a5693423000    : 0          1          1          0          1         
+0x7a5693424000    : 0          1          1          0          1         
+0x7a5693425000    : 0          1          1          0          1         
+0x7a5693426000    : 0          1          1          0          1         
+0x7a5693427000    : 0          1          1          0          1         
+0x7a5693428000    : 0          1          1          0          1         
+0x7a5693429000    : 0          1          1          0          1         
+0x7a569342a000    : 0          1          1          0          1         
+0x7a569342b000    : 0          1          1          0          1         
+0x7a569342c000    : 0          1          1          0          1         
+0x7a569342d000    : 0          1          0          0          0         
+0x7a569342e000    : 0          1          1          0          1         
+0x7a569342f000    : 0          1          1          0          1         
+0x7a5693430000    : 0          1          1          0          1         
+0x7a5693431000    : 0          1          1          0          1         
+0x7a5693432000    : 0          1          1          0          1         
+0x7a5693433000    : 0          1          0          0          0         
+0x7a5693434000    : 0          1          0          0          1         
+0x7a5693435000    : 0          1          0          0          1         
+0x7a569344c000    : 0          1          0          0          1         
+0x7a569344d000    : 0          1          0          0          1         
+0x7a569344e000    : 0          1          1          0          1         
+0x7a569344f000    : 0          1          1          0          1         
+0x7a5693450000    : 0          1          1          0          1         
+0x7a5693451000    : 0          1          1          0          1         
+0x7a5693452000    : 0          1          1          0          1         
+0x7a5693453000    : 0          1          1          0          1         
+0x7a5693454000    : 0          1          1          0          1         
+0x7a5693455000    : 0          1          1          0          1         
+0x7a5693456000    : 0          1          1          0          1         
+0x7a5693457000    : 0          1          1          0          1         
+0x7a5693458000    : 0          1          1          0          1         
+0x7a5693459000    : 0          1          1          0          1         
+0x7a569345a000    : 0          1          1          0          1         
+0x7a569345b000    : 0          1          1          0          1         
+0x7a569345c000    : 0          1          1          0          1         
+0x7a569345d000    : 0          1          1          0          1         
+0x7a569345e000    : 0          1          1          0          1         
+0x7a569345f000    : 0          1          1          0          1         
+0x7a5693460000    : 0          1          1          0          1         
+0x7a5693461000    : 0          1          1          0          1         
+0x7a5693462000    : 0          1          1          0          1         
+0x7a5693463000    : 0          1          1          0          1         
+0x7a5693464000    : 0          1          1          0          1         
+0x7a5693465000    : 0          1          1          0          1         
+0x7a5693466000    : 0          1          1          0          1         
+0x7a5693467000    : 0          1          1          0          1         
+0x7a5693468000    : 0          1          1          0          1         
+0x7a5693469000    : 0          1          1          0          1         
+0x7a569346a000    : 0          1          1          0          1         
+0x7a569346b000    : 0          1          1          0          1         
+0x7a569346c000    : 0          1          1          0          1         
+0x7a569346d000    : 0          1          1          0          1         
+0x7a569346e000    : 0          1          1          0          1         
+0x7a569346f000    : 0          1          1          0          1         
+0x7a5693470000    : 0          1          1          0          1         
+0x7a5693471000    : 0          1          1          0          1         
+0x7a5693472000    : 0          1          1          0          1         
+0x7a5693473000    : 0          1          1          0          1         
+0x7a5693474000    : 0          1          1          0          1         
+0x7a5693475000    : 0          1          1          0          1         
+0x7a5693476000    : 0          1          1          0          1         
+0x7a5693477000    : 0          1          1          0          1         
+0x7a5693478000    : 0          1          1          0          1         
+0x7a5693479000    : 0          1          1          0          1         
+0x7a569347a000    : 0          1          1          0          1         
+0x7a569347b000    : 0          1          1          0          1         
+0x7a569347c000    : 0          1          1          0          1         
+0x7a569347d000    : 0          1          1          0          1         
+0x7a569347e000    : 0          1          1          0          1         
+0x7a569347f000    : 0          1          1          0          1         
+0x7a5693480000    : 0          1          1          0          1         
+0x7a5693481000    : 0          1          1          0          1         
+0x7a5693482000    : 0          1          1          0          1         
+0x7a5693483000    : 0          1          1          0          1         
+0x7a5693484000    : 0          1          1          0          1         
+0x7a5693486000    : 0          1          0          0          1         
+0x7a5693487000    : 0          1          0          0          1         
+0x7a5693488000    : 0          1          0          0          1         
+0x7a5693489000    : 0          1          0          0          1         
+0x7ffe388f1000    : 0          0          0          0          0         
+0x7ffe388f2000    : 0          0          0          0          0         
+0x7ffe388f3000    : 0          0          0          0          0         
+0x7ffe388f4000    : 0          0          0          0          0         
+0x7ffe388f5000    : 0          0          0          0          0         
+0x7ffe388f6000    : 0          0          0          0          0         
+0x7ffe388f7000    : 0          0          0          0          0         
+0x7ffe388f8000    : 0          0          0          0          0         
+0x7ffe388f9000    : 0          0          0          0          0         
+0x7ffe388fa000    : 0          0          0          0          0         
+0x7ffe388fb000    : 0          0          0          0          0         
+0x7ffe388fc000    : 0          0          0          0          0         
+0x7ffe388fd000    : 0          0          0          0          0         
+0x7ffe388fe000    : 0          0          0          0          0         
+0x7ffe388ff000    : 0          0          0          0          0         
+0x7ffe38900000    : 0          0          0          0          0         
+0x7ffe38901000    : 0          0          0          0          0         
+0x7ffe38902000    : 0          0          0          0          0         
+0x7ffe38903000    : 0          0          0          0          0         
+0x7ffe38904000    : 0          0          0          0          0         
+0x7ffe38905000    : 0          0          0          0          0         
+0x7ffe38906000    : 0          0          0          0          0         
+0x7ffe38907000    : 0          0          0          0          0         
+0x7ffe38908000    : 0          0          0          0          0         
+0x7ffe38909000    : 0          0          0          0          0         
+0x7ffe3890a000    : 0          0          0          0          0         
+0x7ffe3890b000    : 0          0          0          0          0         
+0x7ffe3890c000    : 0          0          0          0          0         
+0x7ffe3890d000    : 0          0          0          0          0         
+0x7ffe3890e000    : 0          0          0          0          0         
+0x7ffe3890f000    : 0          1          0          0          1         
+0x7ffe38910000    : 0          1          0          0          1         
+0x7ffe38911000    : 0          1          0          0          1         
+0x7ffe38912000    : 0          1          0          0          1         
+0x7ffe38976000    : 0          1          0          0          0         
+0x7ffe38977000    : 0          1          0          0          0         
+0x7ffe38978000    : 0          1          0          0          0         
+0x7ffe38979000    : 0          1          0          0          0         
+0x7ffe3897a000    : 0          1          1          0          1         
+0x7ffe3897b000    : 0          1          0          0          0         
+0xffffffffff600000 : 0          1          0          0          0         
