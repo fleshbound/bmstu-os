@@ -30,7 +30,7 @@ bakery_prog_1(char *host)
 	srand(time(NULL));
 	double sleep_time = (double)rand() / RAND_MAX * 1000000 * 1.5;
 	usleep(sleep_time);
-    
+//    sleep(rand() % 5 + 1);  
     start_numb = clock();
 	result_1 = getn_1(&getn_1_arg, clnt);
 	if (result_1 == (struct BAKERY *) NULL) {
@@ -39,16 +39,14 @@ bakery_prog_1(char *host)
     start_numb = clock() - start_numb;
 
 	printf("getn: client pid=%2d, num=%2d\n", result_1->pid, result_1->num);
-	usleep((double)rand() / RAND_MAX * 1000000);
 	wait_1_arg.num = result_1->num;
 	wait_1_arg.pid = result_1->pid;
     sleep(rand() % 5 + 1);
 	
     start_wait = clock();
     result_2 = wait_1(&wait_1_arg, clnt);
-	while (result_2 == (struct BAKERY *) NULL) {
-        start_wait = clock();
-		result_2 = wait_1(&wait_1_arg, clnt);
+	if (result_2 == (struct BAKERY *) NULL) {
+		clnt_perror (clnt, "call failed");
     }
     start_wait = clock() - start_wait;
     /*sleep(rand() % 5 + 1);

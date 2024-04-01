@@ -35,13 +35,23 @@ bakery(void *arg)
 	struct thread_arg *t_arg = arg;
 	int i = t_arg->pid;
 	printf("start thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), i, number[i], asctime(timeinfo));
+    time_t t = clock();
+
 	for (int j = 0; j < MAX_CLIENT; j++)
 	{
-		while (choosing[j]);
-		while ((number[j] != 0) && (number[j] < number[i] || (number[j] == number[i] && j < i))){
-            return -1;
+		while (choosing[j]); 
+		while ((number[j] != 0) && (number[j] < number[i] || (number[j] == number[i] && j < i)));
+        {
+            if ((double)(clock() - t) / CLOCKS_PER_SEC >= 0.1)
+            {
+                printf("TIMEOUT client pid=%2d, num=%2d\n", i, number[i]);
+                number[i] = 0;
+                return -1;
+            }   
         }
 	}
+
+    printf("- bakery time: %.4f us\n", (double)(clock() - t) / CLOCKS_PER_SEC * 1000000);
     t_arg->res = curr_res;
 	curr_res++;
 	if (curr_res > 'z')
@@ -79,9 +89,7 @@ wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 	// pthread_create(&thr, NULL, bakery, &thr_res[argp->pid]);
 	// threads[argp->pid] = thr;
     // sleep(2);
-    int err = bakery(&thr_res[argp->pid]);
-
-    if (err != 0) {
+    if (bakery(&thr_res[argp->pid])) {
         return NULL;
     }
 
