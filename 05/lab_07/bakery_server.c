@@ -26,6 +26,7 @@ bool choosing[MAX_CLIENT] = { 0 };
 int number[MAX_CLIENT] = { 0 };
 int curr_res = 'a';
 int local_pid = 0;
+clock_t th_time[MAX_CLIENT] = { 0 };
 
 void *
 bakery(void *arg)
@@ -68,7 +69,7 @@ getn_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 	result.pid = i;
 	result.num = number[i];
 	choosing[i] = false;
-	printf("%d\n", number[i]);
+	// printf("%d\n", number[i]);
     return &result;
 }
 
@@ -79,6 +80,7 @@ wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 	pthread_t thr;
     int i = argp->pid;
 	thr_res[i].pid = argp->pid;
+    th_time[i] = clock();
 	pthread_create(&thr, NULL, bakery, &thr_res[i]);
 	threads[i] = thr;
 	return &result;
@@ -89,6 +91,8 @@ proc_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
 	static struct BAKERY  result;
 	pthread_join(threads[argp->pid], NULL);
+    th_time[argp->pid] = clock() - th_time[argp->pid];
+    printf("thread %d service time: %.4fus\n", argp->pid,  (double) th_time[argp->pid] * 1000000 / CLOCKS_PER_SEC);
 	result.res = thr_res[argp->pid].res;
 	result.pid = argp->pid;
 	return &result;

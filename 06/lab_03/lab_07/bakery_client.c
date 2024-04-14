@@ -41,13 +41,16 @@ bakery_prog_1(char *host)
 	printf("getn: client pid=%2d, num=%2d\n", result_1->pid, result_1->num);
 	wait_1_arg.num = result_1->num;
 	wait_1_arg.pid = result_1->pid;
-    sleep(rand() % 5 + 1);
+    sleep(rand() % 7 + 5);
 	
     start_wait = clock();
     result_2 = wait_1(&wait_1_arg, clnt);
-	if (result_2 == (struct BAKERY *) NULL) {
-		clnt_perror (clnt, "call failed");
-    }
+    if (result_2->res == '0') { 
+        clnt_perror (clnt, "timeout!"); 
+        clnt_destroy (clnt); 
+        exit (1); 
+    } 
+ 
     start_wait = clock() - start_wait;
     /*sleep(rand() % 5 + 1);
 

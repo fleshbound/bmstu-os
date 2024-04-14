@@ -26,42 +26,7 @@ bool choosing[MAX_CLIENT] = { 0 };
 int number[MAX_CLIENT] = { 0 };
 int curr_res = 'a';
 int local_pid = 0;
-
-int
-bakery(void *arg)
-{
-	time(&raw_time);
-	timeinfo = localtime(&raw_time);
-	struct thread_arg *t_arg = arg;
-	int i = t_arg->pid;
-	printf("start thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), i, number[i], asctime(timeinfo));
-    time_t t = clock();
-
-	for (int j = 0; j < MAX_CLIENT; j++)
-	{
-		while (choosing[j]); 
-		while ((number[j] != 0) && (number[j] < number[i] || (number[j] == number[i] && j < i)));
-        {
-            if ((double)(clock() - t) / CLOCKS_PER_SEC >= 0.1)
-            {
-                printf("TIMEOUT client pid=%2d, num=%2d\n", i, number[i]);
-                number[i] = 0;
-                return -1;
-            }   
-        }
-	}
-
-    printf("- bakery time: %.4f us\n", (double)(clock() - t) / CLOCKS_PER_SEC * 1000000);
-    t_arg->res = curr_res;
-	curr_res++;
-	if (curr_res > 'z')
-		curr_res = 'a';
-	time(&raw_time);
-    timeinfo = localtime(&raw_time);
-	printf("stop  thread tid=%d [client pid=%2d, num=%2d] time=%s", gettid(), i, number[i], asctime(timeinfo));
-	number[i] = 0;
-	return 0;
-}
+int last_num = 0;
 
 struct BAKERY *
 getn_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
@@ -84,23 +49,47 @@ getn_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 struct BAKERY *
 wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
-	static struct BAKERY  result;
-    thr_res[argp->pid].pid = argp->pid;
-	// pthread_create(&thr, NULL, bakery, &thr_res[argp->pid]);
-	// threads[argp->pid] = thr;
-    // sleep(2);
-    if (bakery(&thr_res[argp->pid])) {
-        return NULL;
-    }
+	static struct BAKERY result; 
+    int i = argp->pid; 
+    result.pid = i; 
+    result.num = argp->num; 
+     
+    time_t start, end;
+ 
+    for (int j = 0; j < MAX_CLIENT; j++) { 
+        while (choosing[j]);
+        if (last_num > number[i])
+        {
+            number[i] = 0;
+            result.res = '0';
+            return &result;
+        }
+        start = clock(); 
+        while ((number[j] > 0) && (number[j] < number[i] || (number[j] == number[i] && j < i))) { 
+          end = clock(); 
+          if ((end - start) / CLOCKS_PER_SEC > 1) { 
+              break;
+          } 
+        } 
+    } 
+ 
+    result.res = curr_res; 
+    curr_res++;  
+    last_num = number[i];
 
-	return &result;
+    number[i] = 0; 
+
+    for (int j = 0; j < MAX_CLIENT; j++)
+        if (number[j] > 0)
+            return &result;
+
+    last_num = 0;
+ 
+    return &result; 
 }
 
 struct BAKERY *
 proc_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
-	static struct BAKERY  result;
-	result.res = thr_res[argp->pid].res;
-	result.pid = argp->pid;
-	return &result;
+	return NULL;
 }
