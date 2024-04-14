@@ -15,68 +15,68 @@ struct tm *timeinfo;
 void
 bakery_prog_1(char *host)
 {
-	CLIENT *clnt;
-	struct BAKERY  *result_1;
-	struct BAKERY  getn_1_arg;
-	struct BAKERY  *result_2;
-	struct BAKERY  proc_1_arg;
-	struct BAKERY  *result_3;
-	struct BAKERY  wait_1_arg;
+    CLIENT *clnt;
+    struct BAKERY  *result_1;
+    struct BAKERY  getn_1_arg;
+    struct BAKERY  *result_2;
+    struct BAKERY  proc_1_arg;
+    struct BAKERY  *result_3;
+    struct BAKERY  wait_1_arg;
     time_t start_numb, start_wait, start_serv;
 
-	clnt = clnt_create (host, BAKERY_PROG, BAKERY_VER, "udp");
-	if (clnt == NULL) {
-		clnt_pcreateerror (host);
-		exit (1);
-	}
+    clnt = clnt_create (host, BAKERY_PROG, BAKERY_VER, "udp");
+    if (clnt == NULL) {
+        clnt_pcreateerror (host);
+        exit (1);
+    }
     srand(time(NULL));
     double sleep_time = (double)rand() / RAND_MAX * 1000000 * 1.5;
     usleep(sleep_time);
     start_numb = clock();
-	result_1 = getn_1(&getn_1_arg, clnt);
-	if (result_1 == (struct BAKERY *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
+    result_1 = getn_1(&getn_1_arg, clnt);
+    if (result_1 == (struct BAKERY *) NULL) {
+        clnt_perror (clnt, "call failed");
+    }
     start_numb = clock() - start_numb;
-	printf("getn: client pid=%2d, num=%2d\n", result_1->pid, result_1->num);
-//	usleep((double)rand() / RAND_MAX * 1000000);
+    printf("getn: client pid=%2d, num=%2d\n", result_1->pid, result_1->num);
+    //	usleep((double)rand() / RAND_MAX * 1000000);
     sleep(rand() % 5 + 1);
-	wait_1_arg.num = result_1->num;
-	wait_1_arg.pid = result_1->pid;
+    wait_1_arg.num = result_1->num;
+    wait_1_arg.pid = result_1->pid;
     start_wait = clock();
-	result_2 = wait_1(&wait_1_arg, clnt);
-	if (result_2 == (struct BAKERY *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
-//  sleep(2);
+    result_2 = wait_1(&wait_1_arg, clnt);
+    if (result_2 == (struct BAKERY *) NULL) {
+        clnt_perror (clnt, "call failed");
+    }
+    //  sleep(2);
     start_wait = clock() - start_wait;
     sleep(rand() % 5 + 1);
-	proc_1_arg.num = wait_1_arg.num;
-	proc_1_arg.pid = wait_1_arg.pid;
+    proc_1_arg.num = wait_1_arg.num;
+    proc_1_arg.pid = wait_1_arg.pid;
     start_serv = clock();
-	result_3 = proc_1(&proc_1_arg, clnt);
-	if (result_3 == (struct BAKERY *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
+    result_3 = proc_1(&proc_1_arg, clnt);
+    if (result_3 == (struct BAKERY *) NULL) {
+        clnt_perror (clnt, "call failed");
+    }
     start_serv = clock() - start_serv;
-//  clock_t end_t = clock();
-//  printf("END TIME (us): %f\n", (double) end_t * 1000000 / CLOCKS_PER_SEC);
+    //  clock_t end_t = clock();
+    //  printf("END TIME (us): %f\n", (double) end_t * 1000000 / CLOCKS_PER_SEC);
     double t = (double) (start_numb + start_wait + start_serv) * 1000000 / CLOCKS_PER_SEC;
-	printf("proc: client pid=%2d, res=%c (sleep=%.1fs)\ntotal_time=%.4fus\n", result_3->pid, result_3->res, sleep_time / 1000000, t);
-	clnt_destroy (clnt);
+    printf("proc: client pid=%2d, res=%c (sleep=%.1fs)\ntotal_time=%.4fus\n", result_3->pid, result_3->res, sleep_time / 1000000, t);
+    clnt_destroy (clnt);
 }
 
 
 int
 main (int argc, char *argv[])
 {
-	char *host;
+    char *host;
 
-	if (argc < 2) {
-		printf ("usage: %s server_host\n", argv[0]);
-		exit (1);
-	}
-	host = argv[1];
-	bakery_prog_1 (host);
-exit (0);
+    if (argc < 2) {
+        printf ("usage: %s server_host\n", argv[0]);
+        exit (1);
+    }
+    host = argv[1];
+    bakery_prog_1 (host);
+    exit (0);
 }

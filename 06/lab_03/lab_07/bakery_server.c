@@ -31,25 +31,25 @@ int last_num = 0;
 struct BAKERY *
 getn_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
-	static struct BAKERY  result;
-	int i = local_pid;
-	local_pid++;
-	choosing[i] = true;
-	int max_n = 0;
-	for (int j = 0; j < MAX_CLIENT; j++)
-		if (number[j] > max_n)
-			max_n = number[j];
-	number[i] = max_n + 1;
-	result.pid = i;
-	result.num = number[i];
-	choosing[i] = false;
-	return &result;
+    static struct BAKERY  result;
+    int i = local_pid;
+    local_pid++;
+    choosing[i] = true;
+    int max_n = 0;
+    for (int j = 0; j < MAX_CLIENT; j++)
+        if (number[j] > max_n)
+            max_n = number[j];
+    number[i] = max_n + 1;
+    result.pid = i;
+    result.num = number[i];
+    choosing[i] = false;
+    return &result;
 }
 
 struct BAKERY *
 wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
-	static struct BAKERY result; 
+    static struct BAKERY result; 
     int i = argp->pid; 
     result.pid = i; 
     result.num = argp->num; 
@@ -91,5 +91,5 @@ wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 struct BAKERY *
 proc_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
-	return NULL;
+    return NULL;
 }
