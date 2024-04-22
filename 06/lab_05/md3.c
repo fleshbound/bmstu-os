@@ -10,7 +10,7 @@ static int __init md_init(void)
     printk("+ module md3 start\n");
     printk("+ data string exported from md1: %s\n", md1_data);
     printk("+ string returned md1_proc() is: %s\n", md1_proc());
-    return -1;
+    return 0;
 }
 
 static void __exit md_exit(void)
