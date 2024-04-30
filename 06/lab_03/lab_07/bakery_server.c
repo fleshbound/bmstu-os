@@ -12,40 +12,42 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include "bakery.h"
+#define MY_TIMEOUT_SEC 1
 struct thread_arg
 {
 	int pid;
 	int num;
 	int res;
 };
-time_t raw_time;
-struct tm *timeinfo;
-pthread_t threads[MAX_CLIENT];
-struct thread_arg thr_res[MAX_CLIENT];
 bool choosing[MAX_CLIENT] = { 0 };
 int number[MAX_CLIENT] = { 0 };
 int curr_res = 'a';
 int local_pid = 0;
 int last_num = 0;
-
+// получение номера
 struct BAKERY *
 getn_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
     static struct BAKERY  result;
+
     int i = local_pid;
     local_pid++;
     choosing[i] = true;
+
     int max_n = 0;
+
     for (int j = 0; j < MAX_CLIENT; j++)
         if (number[j] > max_n)
             max_n = number[j];
+
     number[i] = max_n + 1;
     result.pid = i;
     result.num = number[i];
     choosing[i] = false;
+
     return &result;
 }
-
+// обслуживание (булочная)
 struct BAKERY *
 wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
@@ -53,41 +55,42 @@ wait_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
     int i = argp->pid; 
     result.pid = i; 
     result.num = argp->num; 
-     
     time_t start, end;
- 
     for (int j = 0; j < MAX_CLIENT; j++) { 
         while (choosing[j]);
-        if (last_num > number[i])
-        {
+        /* Если клиент опоздал, то есть его номер меньше,
+           чем номер последнего обслуженного - отказ в
+           обслуживании (пустой результат) */
+        if (last_num > number[i]) {
             number[i] = 0;
             result.res = '0';
             return &result;
         }
-        start = clock(); 
-        while ((number[j] > 0) && (number[j] < number[i] || (number[j] == number[i] && j < i))) { 
-          end = clock(); 
-          if ((end - start) / CLOCKS_PER_SEC > 1) { 
-              break;
-          } 
-        } 
-    } 
- 
+        /* Если время ожидания превысило MY_TIMEOUT_SEC,
+           значит, клиенты с меньшим номером опоздали */
+        start = clock();
+        while ((number[j] > 0) 
+                && (number[j] < number[i] || (number[j] == number[i] && j < i)))
+        {
+            end = clock();
+            if ((end - start) / CLOCKS_PER_SEC > MY_TIMEOUT_SEC)
+                break;
+        }
+    }
     result.res = curr_res; 
-    curr_res++;  
+    curr_res++;
     last_num = number[i];
-
     number[i] = 0; 
-
+    /* Если клиентов, ожидающих обслуживания,
+       нет, сбрасывается номер последнего обслу-
+       женного клиента */
     for (int j = 0; j < MAX_CLIENT; j++)
         if (number[j] > 0)
             return &result;
-
     last_num = 0;
- 
     return &result; 
 }
-
+// не используется в однопоточной версии
 struct BAKERY *
 proc_1_svc(struct BAKERY *argp, struct svc_req *rqstp)
 {
