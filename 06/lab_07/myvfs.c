@@ -14,7 +14,7 @@ static struct kmem_cache *cache = NULL;
 static void **cache_mem = NULL;
 static int cached_count = 0;
 
-static struct myvfs_inode
+struct myvfs_inode
 {
     int i_mode;
     unsigned long i_ino;
