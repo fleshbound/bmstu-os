@@ -10,31 +10,15 @@ MODULE_LICENSE("GPL");
 
 #define COOKIE_BUF_SIZE PAGE_SIZE
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
-#define HAVE_PROC_OPS
-#endif
-
-static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos);
-static int fortune_release(struct inode*, struct file*);
 static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos);
 static int fortune_open(struct inode *inode, struct file *file);
 
-#ifdef HAVE_PROC_OPS
 static struct proc_ops fops = {
-    .proc_read = fortune_read,
+    .proc_read = seq_read,
     .proc_write = fortune_write,
     .proc_open = fortune_open,
-    .proc_release = fortune_release
+    .proc_release = seq_release,
 };
-#else
-static struct file_operations fops = {
-    .owner = THIS_MODULE,
-    .read = fortune_read,
-    .write = fortune_write,
-    .open = fortune_open,
-    .release = fortune_release
-}
-#endif
 
 void *fortune_start(struct seq_file *m, loff_t *pos);
 void fortune_stop(struct seq_file *m, void *v);
@@ -57,13 +41,13 @@ void *fortune_start(struct seq_file *m, loff_t *pos)
 {
     printk(KERN_INFO "** INFO: call fortune_start\n");
 
-    if (*pos > 0 || write_index == 0)
+    if (*pos || write_index == 0)
     {
         *pos = 0;
         return NULL;
     }
 
-    if (read_index > write_index)
+    if (read_index >= write_index)
         read_index = 0;
 
     return cookie_pot + read_index;
@@ -81,7 +65,7 @@ void fortune_stop(struct seq_file *m, void *v)
 
 void *fortune_next(struct seq_file *m, void *v, loff_t *pos)
 {
-    printk(KERN_INFO "** INFO: call fortune_next\n");
+    printk(KERN_INFO "** INFO: call fortune_next, v = %pX, pos = %Ld\n", v, *pos);
 
     read_index++;
     (*pos)++;
@@ -96,12 +80,6 @@ int fortune_show(struct seq_file *m, void *v)
     return 0;
 }
 
-static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos)
-{
-    printk(KERN_INFO "** INFO: call fortune_read\n");
-    return seq_read(file, buf, count, f_pos);
-}
-
 static int fortune_open(struct inode *inode, struct file *file)
 {
     printk(KERN_INFO "** INFO: call fortune_open\n");
@@ -110,8 +88,9 @@ static int fortune_open(struct inode *inode, struct file *file)
 
 static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos)
 {
-    int space_left = (COOKIE_BUF_SIZE - write_index) + 1;
     printk(KERN_INFO "** INFO: call fortune_write");
+
+    int space_left = (COOKIE_BUF_SIZE - write_index) + 1;
 
     if (space_left < count) {
         printk(KERN_ERR "** ERROR: no space left\n");
@@ -128,12 +107,6 @@ static ssize_t fortune_write(struct file *file, const char __user *buf, size_t c
     printk(KERN_INFO "** INFO: success fortune_write");
 
     return count;
-}
-
-static int fortune_release(struct inode*, struct file*)
-{
-    printk(KERN_INFO "** INFO: call fortune_release");
-    return 0;
 }
 
 static int __init fortune_init(void) {
@@ -175,7 +148,7 @@ static void __exit fortune_exit(void) {
     proc_remove(proc_dir);
     proc_remove(proc_link);
     vfree(cookie_pot);
-    printk(KERN_INFO "** INFO: fortune module unloaded\n");
+    printk(KERN_INFO "** INFO: fortune module unloaded----------END-----------\n");
 }
 
 module_init(fortune_init);

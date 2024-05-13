@@ -46,7 +46,8 @@ static char tmp[256];
 static ssize_t fortune_read(struct file *file, char __user *buf, size_t count, loff_t *f_pos) {
     printk(KERN_INFO "** INFO: call fortune_read");
     
-    if (*f_pos > 0) {
+    if (*f_pos || write_index == 0) {
+        *f_pos = 0;
         return 0;
     }
 
@@ -56,16 +57,15 @@ static ssize_t fortune_read(struct file *file, char __user *buf, size_t count, l
 
     int len = 0;
 
-    if (write_index > 0) {
-        len = sprintf(tmp, "%s\n", &cookie_pot[read_index]);
-        
-        if (copy_to_user(buf, tmp, len)) {
-            return -EFAULT;
-        }
-
-        buf += len;
-        read_index += len;
+    len = sprintf(tmp, "%s\n", &cookie_pot[read_index]);
+    
+    if (copy_to_user(buf, tmp, len)) {
+        printk(KERN_ERR "** ERROR: copy_to_user\n");
+        return -EFAULT;
     }
+
+    buf += len;
+    read_index += len;
 
     *f_pos += len;
     printk(KERN_INFO "** INFO: success fortune_read");
@@ -74,8 +74,9 @@ static ssize_t fortune_read(struct file *file, char __user *buf, size_t count, l
 }
 
 static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos) {
-    int space_left = (COOKIE_BUF_SIZE - write_index) + 1;
     printk(KERN_INFO "** INFO: call fortune_write");
+
+    int space_left = (COOKIE_BUF_SIZE - write_index) + 1;
 
     if (space_left < count) {
         printk(KERN_ERR "** ERROR: no space left\n");
