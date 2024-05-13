@@ -10,15 +10,31 @@ MODULE_LICENSE("GPL");
 
 #define COOKIE_BUF_SIZE PAGE_SIZE
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+#define HAVE_PROC_OPS
+#endif
+
+static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos);
+static int fortune_release(struct inode*, struct file*);
 static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos);
 static int fortune_open(struct inode *inode, struct file *file);
 
+#ifdef HAVE_PROC_OPS
 static struct proc_ops fops = {
-    .proc_read = seq_read,
+    .proc_read = fortune_read,
     .proc_write = fortune_write,
     .proc_open = fortune_open,
-    .proc_release = seq_release,
+    .proc_release = fortune_release
 };
+#else
+static struct file_operations fops = {
+    .owner = THIS_MODULE,
+    .read = fortune_read,
+    .write = fortune_write,
+    .open = fortune_open,
+    .release = fortune_release
+}
+#endif
 
 void *fortune_start(struct seq_file *m, loff_t *pos);
 void fortune_stop(struct seq_file *m, void *v);
@@ -76,8 +92,13 @@ void *fortune_next(struct seq_file *m, void *v, loff_t *pos)
 int fortune_show(struct seq_file *m, void *v)
 {
     printk(KERN_INFO "** INFO: call fortune_show\n");
-    seq_printf(m, "%c", *((char *)v));
-    return 0;
+    return seq_printf(m, "%c", *((char *)v));
+}
+
+static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos)
+{
+    printk(KERN_INFO "** INFO: call fortune_read\n");
+    return seq_read(file, buf, count, f_pos);
 }
 
 static int fortune_open(struct inode *inode, struct file *file)
@@ -109,6 +130,12 @@ static ssize_t fortune_write(struct file *file, const char __user *buf, size_t c
     return count;
 }
 
+static int fortune_release(struct inode*, struct file*)
+{
+    printk(KERN_INFO "** INFO: call fortune_release");
+    return 0;
+}
+
 static int __init fortune_init(void) {
     cookie_pot = (char *) vmalloc(COOKIE_BUF_SIZE);
 
@@ -118,13 +145,15 @@ static int __init fortune_init(void) {
     }
 
     memset(cookie_pot, 0, COOKIE_BUF_SIZE);
-    proc_file = proc_create("fortune", S_IRUGO | S_IWUGO, NULL, &fops);
+    proc_file = proc_create_data("fortune", S_IRUGO | S_IWUGO, NULL, &fops, NULL);
 
     if (!proc_file) {
         vfree(cookie_pot);
         printk(KERN_ERR "** ERROR: can't proc_create\n");
         return -ENOMEM;
     }
+    
+    printk(KERN_INFO "** INFO: fortune_init");
 
     read_index = 0;
     write_index = 0;

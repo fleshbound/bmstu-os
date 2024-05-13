@@ -20,13 +20,13 @@ struct myvfs_inode
     unsigned long i_ino;
 };
 
-static struct tree_descr OurFiles[] = {
+static struct tree_descr files[] = {
 	    { NULL, NULL, 0 },
 };
 
 static int myvfs_fill_super(struct super_block *sb, void *data, int silent)
 {
-    return simple_fill_super(sb, MYVFS_MAGIC_NUMBER, OurFiles);
+    return simple_fill_super(sb, MYVFS_MAGIC_NUMBER, files);
 }
 
 static struct dentry *myvfs_mount(struct file_system_type *type, int flags, const char *dev, void *data)

@@ -1,11 +1,10 @@
 #include <asm/uaccess.h>
-#include <linux/fs.h>
-#include <linux/kernel.h>
+#include <linux/init.h>
 #include <linux/module.h>
-#include <linux/proc_fs.h>
-#include <linux/string.h>
-#include <linux/version.h>
 #include <linux/vmalloc.h>
+#include <linux/proc_fs.h>
+#include <linux/version.h>
+#include <linux/seq_file.h>
 
 MODULE_LICENSE("GPL");
 
@@ -16,9 +15,9 @@ MODULE_LICENSE("GPL");
 #endif
 
 static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos);
-static ssize_t fortune_write(struct file *file, const char *buf, size_t count, loff_t *f_pos);
-static int fortune_open(struct inode*, struct file*);
 static int fortune_release(struct inode*, struct file*);
+static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos);
+static int fortune_open(struct inode *inode, struct file *file);
 
 #ifdef HAVE_PROC_OPS
 static struct proc_ops fops = {
@@ -37,42 +36,25 @@ static struct file_operations fops = {
 }
 #endif
 
-static char *cookie_pot;
+static char *cookie_pot = NULL;
 static struct proc_dir_entry *proc_file, *proc_dir, *proc_link;
-static unsigned int read_index;
-static unsigned int write_index;
-static char tmp[256];
+static unsigned int read_index = 0;
+static unsigned int write_index = 0;
 
-static ssize_t fortune_read(struct file *file, char __user *buf, size_t count, loff_t *f_pos) {
-    printk(KERN_INFO "** INFO: call fortune_read");
-    
-    if (*f_pos || write_index == 0) {
-        *f_pos = 0;
-        return 0;
-    }
-
-    if (read_index >= write_index) {
-        read_index = 0;
-    }
-
-    int len = 0;
-
-    len = snprintf(tmp, COOKIE_BUF_SIZE, "%s\n", &cookie_pot[read_index]);
-    
-    if (copy_to_user(buf, tmp, len)) {
-        printk(KERN_ERR "** ERROR: copy_to_user\n");
-        return -EFAULT;
-    }
-
-    printk(KERN_INFO "** INFO: success fortune_read cookie_pot = \"%s\"\n", &cookie_pot[read_index]);
-
-    read_index += len;
-    *f_pos += len;
-
-    return len;
+static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos)
+{
+    printk(KERN_INFO "** INFO: call fortune_read\n");
+    return seq_read(file, buf, count, f_pos);
 }
 
-static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos) {
+static int fortune_release(struct inode*, struct file*)
+{
+    printk(KERN_INFO "** INFO: call fortune_release");
+    return 0;
+}
+
+static ssize_t fortune_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos)
+{
     printk(KERN_INFO "** INFO: call fortune_write");
 
     int space_left = (COOKIE_BUF_SIZE - write_index) + 1;
@@ -87,25 +69,28 @@ static ssize_t fortune_write(struct file *file, const char __user *buf, size_t c
         return -EFAULT;
     }
 
-    printk(KERN_INFO "** INFO: success fortuse_write cookie_pot = %s", &cookie_pot[write_index]);
-
     write_index += count;
     cookie_pot[write_index - 1] = '\0';
+    printk(KERN_INFO "** INFO: success fortune_write");
 
     return count;
 }
 
-static int fortune_open(struct inode*, struct file*) {
-    printk(KERN_INFO "** INFO: call fortune_open");
+static int fortune_show(struct seq_file *m, void *v)
+{
+    printk(KERN_INFO "** INFO: call fortune_show\n");
+    seq_printf(m, "%s\n", cookie_pot);
     return 0;
 }
 
-static int fortune_release(struct inode*, struct file*) {
-    printk(KERN_INFO "** INFO: call fortune_release");
-    return 0;
+static int fortune_open(struct inode *inode, struct file *file)
+{
+    printk(KERN_INFO "** INFO: call fortune_open\n");
+    return single_open(file, fortune_show, NULL);
 }
 
-static int __init fortune_init(void) {
+static int __init fortune_init(void)
+{
     cookie_pot = (char *) vmalloc(COOKIE_BUF_SIZE);
 
     if (!cookie_pot) {
@@ -114,7 +99,7 @@ static int __init fortune_init(void) {
     }
 
     memset(cookie_pot, 0, COOKIE_BUF_SIZE);
-    proc_file = proc_create("fortune", S_IRUGO | S_IWUGO, NULL, &fops);
+    proc_file = proc_create_data("fortune", S_IRUGO | S_IWUGO, NULL, &fops, NULL);
 
     if (!proc_file) {
         vfree(cookie_pot);
@@ -122,20 +107,17 @@ static int __init fortune_init(void) {
         return -ENOMEM;
     }
     
-    printk(KERN_INFO "** INFO: fortune_init\n");
-    proc_dir = proc_mkdir("fortune_dir", NULL);
-    
-    if (!proc_dir) {
-        vfree(cookie_pot);
-        printk(KERN_ERR "** ERROR: can't proc_mkdir\n");
-        return -ENOMEM;
-    }
-    
-    proc_link = proc_symlink("fortune_symlink", NULL, "/proc/fortune");
+    printk(KERN_INFO "** INFO: fortune_init");
 
-    if (!proc_link) {
+    read_index = 0;
+    write_index = 0;
+
+    proc_dir = proc_mkdir("fortune_dir", NULL);
+    proc_link = proc_symlink("fortune_symlink", NULL, "/proc/fortune");
+    
+    if (!proc_dir || !proc_link) {
         vfree(cookie_pot);
-        printk(KERN_ERR "** ERROR: can't proc_symlink\n");
+        printk(KERN_ERR "** ERROR: can't proc_mkdir or proc_symlink\n");
         return -ENOMEM;
     }
 
@@ -149,7 +131,7 @@ static void __exit fortune_exit(void) {
     proc_remove(proc_dir);
     proc_remove(proc_link);
     vfree(cookie_pot);
-    printk(KERN_INFO "** INFO: fortune module unloaded--------END--------\n");
+    printk(KERN_INFO "** INFO: fortune module unloaded----------END-----------\n");
 }
 
 module_init(fortune_init);

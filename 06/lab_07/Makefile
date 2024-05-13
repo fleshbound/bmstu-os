@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m := myvfs1.o
+	obj-m := myvfs.o
 
 else
 	CURRENT = $(shell uname -r)

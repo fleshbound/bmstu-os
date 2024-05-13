@@ -63,7 +63,7 @@ static struct inode *myvfs_make_inode(struct super_block *sb, int mode)
     {
         inode_init_owner(&nop_mnt_idmap, ret, NULL, mode);
 
-        ret->i_ino = 727;
+        ret->i_ino = 1;
         printk(KERN_INFO "+ myvfs: root inode i_ino = %lu", ret->i_ino);
 
         ret->i_mode = mode;
@@ -170,15 +170,6 @@ static int __init myvfs_init(void)
         kfree(cache_mem);
         return -ENOMEM;
     }
-
-    /*if (NULL == ((*cache_mem) = kmem_cache_alloc(cache, GFP_KERNEL)))
-    {
-        printk(KERN_ERR "+ myvfs: can't kmem_cache_alloc\n");
-        kmem_cache_free(cache, *cache_mem);
-        kmem_cache_destroy(cache);
-        kfree(cache_mem);
-        return -ENOMEM;
-    }*/
 
     printk(KERN_INFO "+ myvfs: alloc %d objects into slab: %s\n", cached_count, SLAB_NAME);
     printk(KERN_INFO "+ myvfs: object size %ld bytes, full size %ld bytes\n", sizeof(struct myvfs_inode), sizeof(struct myvfs_inode *) * MAX_CACHE_SIZE);
