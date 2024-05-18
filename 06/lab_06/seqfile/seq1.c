@@ -38,8 +38,9 @@ static struct file_operations fops = {
 
 static char *cookie_pot = NULL;
 static struct proc_dir_entry *proc_file, *proc_dir, *proc_link;
-static unsigned int read_index = 0;
+static unsigned int show_index = 0;
 static unsigned int write_index = 0;
+static char tmp[256];
 
 static ssize_t fortune_read(struct file *file, char *buf, size_t count, loff_t *f_pos)
 {
@@ -79,7 +80,21 @@ static ssize_t fortune_write(struct file *file, const char __user *buf, size_t c
 static int fortune_show(struct seq_file *m, void *v)
 {
     printk(KERN_INFO "** INFO: call fortune_show\n");
-    seq_printf(m, "%s\n", cookie_pot);
+
+    if (write_index == 0)
+        return 0;
+
+    if (show_index >= write_index)
+        show_index = 0;
+
+    int len = snprintf(tmp, COOKIE_BUF_SIZE, "%s\n", &cookie_pot[show_index]);
+
+    seq_printf(m, "%s\n", &cookie_pot[show_index]);
+    
+    printk(KERN_INFO "** INFO: success fortune_show cookie_pot = \"%s\"\n", &cookie_pot[show_index]);
+
+    show_index += len;
+
     return 0;
 }
 
@@ -108,9 +123,6 @@ static int __init fortune_init(void)
     }
     
     printk(KERN_INFO "** INFO: fortune_init");
-
-    read_index = 0;
-    write_index = 0;
 
     proc_dir = proc_mkdir("fortune_dir", NULL);
     proc_link = proc_symlink("fortune_symlink", NULL, "/proc/fortune");

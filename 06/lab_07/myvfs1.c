@@ -34,18 +34,23 @@ static struct dentry *myvfs_mount(struct file_system_type *type, int flags, cons
     struct dentry *const entry = mount_nodev(type, flags, data, myvfs_fill_super);
 
     if (IS_ERR(entry))
-        printk(KERN_ERR "+ myvfs mounting failed\n");
+        printk(KERN_ERR "+ ERR: myvfs mounting failed\n");
     else
-        printk(KERN_INFO "+ myvfs mounted\n");
+        printk(KERN_INFO "+ INFO: myvfs mounted\n");
 
     return entry;
+}
+
+void my_kill_super(struct super_block *sb)
+{
+    return kill_litter_super(sb);
 }
 
 static struct file_system_type myvfs_type = {
     .owner = THIS_MODULE,
     .name = "myvfs",
     .mount = myvfs_mount,
-    .kill_sb = kill_litter_super,
+    .kill_sb = my_kill_super,
     .fs_flags = FS_USERNS_MOUNT,
 };
 
@@ -60,13 +65,13 @@ static int __init myvfs_init(void)
 
     if (ret)
     {
-        printk(KERN_ERR "+ myvfs: can't register_filesystem\n");
+        printk(KERN_ERR "+ ERR: myvfs: can't register_filesystem\n");
         return ret;
     }
 
     if (NULL == (cache_mem = kmalloc(sizeof(struct myvfs_inode *) * MAX_CACHE_SIZE, GFP_KERNEL)))
     {
-        printk(KERN_ERR "+ myvfs: can't kmalloc cache\n");
+        printk(KERN_ERR "+ ERR: myvfs: can't kmalloc cache\n");
         return -ENOMEM;
     }
 
@@ -81,7 +86,7 @@ static int __init myvfs_init(void)
     for (int i = 0; i < cached_count; i++)
         if (NULL == (cache_mem[i] = kmem_cache_alloc(cache, GFP_KERNEL)))
         {
-            printk(KERN_ERR "+ myvfs: can't kmem_cache_alloc\n");
+            printk(KERN_ERR "+ ERR: myvfs: can't kmem_cache_alloc\n");
 
             for (size_t j = 0; j < i; j++)
                 kmem_cache_free(cache, cache_mem[j]);
@@ -92,9 +97,9 @@ static int __init myvfs_init(void)
             return -ENOMEM;
         }
 
-    printk(KERN_INFO "+ myvfs: alloc %d objects into slab: %s\n", cached_count, SLAB_NAME);
-    printk(KERN_INFO "+ myvfs: object size %ld bytes, full size %ld bytes\n", sizeof(struct myvfs_inode), sizeof(struct myvfs_inode *) * MAX_CACHE_SIZE);
-    printk(KERN_INFO "+ myvfs: module loaded\n");
+    printk(KERN_INFO "+ INFO: myvfs: alloc %d objects into slab: %s\n", cached_count, SLAB_NAME);
+    printk(KERN_INFO "+ INFO: myvfs: object size %ld bytes, full size %ld bytes\n", sizeof(struct myvfs_inode), sizeof(struct myvfs_inode *) * MAX_CACHE_SIZE);
+    printk(KERN_INFO "+ INFO: myvfs: module loaded\n");
 
     return 0;
 }
@@ -110,9 +115,9 @@ static void __exit myvfs_exit(void)
     int ret = unregister_filesystem(&myvfs_type);
 
     if (ret)
-        printk(KERN_ERR "+ myvfs: can't unregister_filesystem\n");
+        printk(KERN_ERR "+ ERR: myvfs: can't unregister_filesystem\n");
 
-    printk(KERN_INFO "+ myvfs: module unloaded\n");
+    printk(KERN_INFO "+ INFO: myvfs: module unloaded\n");
 }
 
 module_init(myvfs_init);
