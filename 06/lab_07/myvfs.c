@@ -191,7 +191,7 @@ static void __exit myvfs_exit(void)
     kmem_cache_destroy(cache);
     kfree(cache_mem);
 
-    printk(KERN_INFO "+ myvfs: module unloaded\n");
+    printk(KERN_INFO "+ myvfs: module unloaded-------------END\n");
 }
 
 module_init(myvfs_init);

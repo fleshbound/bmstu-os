@@ -77,7 +77,7 @@ static int __init myvfs_init(void)
 
     if (NULL == (cache = kmem_cache_create(SLAB_NAME, sizeof(struct myvfs_inode), 0, SLAB_HWCACHE_ALIGN, f_init)))
     {
-        printk(KERN_ERR "+ myvfs: can't kmem_cache_create\n");
+        printk(KERN_ERR "+ ERR: myvfs: can't kmem_cache_create\n");
         kmem_cache_destroy(cache);
         kfree(cache_mem);
         return -ENOMEM;
@@ -98,7 +98,7 @@ static int __init myvfs_init(void)
         }
 
     printk(KERN_INFO "+ INFO: myvfs: alloc %d objects into slab: %s\n", cached_count, SLAB_NAME);
-    printk(KERN_INFO "+ INFO: myvfs: object size %ld bytes, full size %ld bytes\n", sizeof(struct myvfs_inode), sizeof(struct myvfs_inode *) * MAX_CACHE_SIZE);
+    printk(KERN_INFO "+ INFO: myvfs: object size %ld bytes, MAX = %d, full size %ld bytes\n", sizeof(struct myvfs_inode), MAX_CACHE_SIZE, sizeof(struct myvfs_inode) * MAX_CACHE_SIZE);
     printk(KERN_INFO "+ INFO: myvfs: module loaded\n");
 
     return 0;
@@ -117,7 +117,7 @@ static void __exit myvfs_exit(void)
     if (ret)
         printk(KERN_ERR "+ ERR: myvfs: can't unregister_filesystem\n");
 
-    printk(KERN_INFO "+ INFO: myvfs: module unloaded\n");
+    printk(KERN_INFO "+ INFO: myvfs: module unloaded-------------END\n");
 }
 
 module_init(myvfs_init);

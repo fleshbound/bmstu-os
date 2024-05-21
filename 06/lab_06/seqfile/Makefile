@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m := seq1.o
+	obj-m := seqfile.o
 
 else
 	CURRENT = $(shell uname -r)
