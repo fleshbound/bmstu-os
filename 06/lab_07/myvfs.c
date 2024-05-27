@@ -19,9 +19,28 @@ struct myvfs_inode
 {
     int i_mode;
     unsigned long i_ino;
-    //int unused;
-    //long unused2;
-    //long unused3;
+};
+
+static void myvfs_put_super(struct super_block *sb);
+static int myvfs_statfs(struct dentry *denty, struct kstatfs *buf);
+int myvfs_delete_inode(struct inode *inode);
+
+static struct super_operations const myvfs_super_operations = {
+    .put_super = myvfs_put_super,
+    .statfs = myvfs_statfs,
+    .drop_inode = myvfs_delete_inode,
+};
+
+static int myvfs_fill_super(struct super_block *sb, void *data, int silent);
+static struct dentry *myvfs_mount(struct file_system_type *type, int flags, const char *dev, void *data);
+static void myvfs_kill_super(struct super_block *sb);
+
+static struct file_system_type myvfs_type = {
+    .owner = THIS_MODULE,
+    .name = "myvfs",
+    .mount = myvfs_mount,
+    .kill_sb = myvfs_kill_super,
+    .fs_flags = FS_USERNS_MOUNT,
 };
 
 static void myvfs_put_super(struct super_block *sb)
@@ -29,126 +48,73 @@ static void myvfs_put_super(struct super_block *sb)
     printk(KERN_INFO "+ myvfs: myfs_put_super\n");
 }
 
-static struct super_operations const myvfs_super_ops = {
-    .put_super = myvfs_put_super,
-    .statfs = simple_statfs,
-    .drop_inode = generic_delete_inode,
-};
-
-static struct myvfs_inode *myvfs_cache_get_inode(void)
+static int myvfs_statfs(struct dentry *dentry, struct kstatfs *buf)
 {
-    printk(KERN_INFO "+ myvfs: call myvfs_cache_get_inode\n");
-
-    if (cached_count == MAX_CACHE_SIZE)
-    {
-        printk(KERN_ERR "+ myvfs: reached MAX_CACHE_SIZE\n");
-        return NULL;
-    }
-
-    void *ret = cache_mem[cached_count++] = kmem_cache_alloc(cache, GFP_KERNEL);
-
-    if (!ret)
-    {
-        printk(KERN_ERR "+ myvfs: can't kmem_cache_alloc\n");
-        kmem_cache_free(cache, *cache_mem);
-        kmem_cache_destroy(cache);
-        kfree(cache_mem);
-    }
-
-    return ret;
+    printk(KERN_INFO "+ myvfs: call myvfs_statfs\n");
+    return simple_statfs(dentry, buf);
 }
 
-static struct inode *myvfs_make_inode(struct super_block *sb, int mode)
+int myvfs_delete_inode(struct inode *inode)
 {
-    struct inode *ret = new_inode(sb);
-    struct myvfs_inode *cache_inode = NULL;
-    
-    if (ret)
-    {
-        inode_init_owner(&nop_mnt_idmap, ret, NULL, mode);
-
-        ret->i_ino = 1;
-        printk(KERN_INFO "+ myvfs: root inode i_ino = %lu", ret->i_ino);
-
-        ret->i_mode = mode;
-        ret->i_atime = ret->i_mtime = ret->i_ctime = current_time(ret);
-
-        if (NULL == (cache_inode = myvfs_cache_get_inode()))
-        {
-            //iput(ret);
-        }
-        else
-        {
-            cache_inode->i_mode = ret->i_mode;
-            cache_inode->i_ino = ret->i_ino;
-            ret->i_private = cache_inode;
-        }
-    }
-
-    return ret;
+    printk(KERN_INFO "+ myvfs: call myvfs_delete_inode\n");
+    return generic_delete_inode(inode);
 }
 
-static int myvfs_fill_sb(struct super_block *sb, void *data, int silent)
+static int myvfs_fill_super(struct super_block *sb, void *data, int silent)
 {
+    printk(KERN_INFO "+ myvfs: call myvfs_fill_super\n");
     struct inode *inode;
 
     sb->s_blocksize = PAGE_SIZE;
     sb->s_blocksize_bits = PAGE_SHIFT;
     sb->s_magic = myvfs_MAGIC_NUMBER;
-    sb->s_op = &myvfs_super_ops;
+    sb->s_op = &myvfs_super_operations;
+    sb->s_time_gran = 1;
 
-    inode = myvfs_make_inode(sb, S_IFDIR | 0755);
-    
+    inode = new_inode(sb);
+
     if (!inode)
     {
-        printk(KERN_ERR "+ myvfs: can't new_inode root\n");
+        printk(KERN_ERR "+ myvfs: ERR: new_inode\n");
         return -ENOMEM;
     }
-    
+
+    inode->i_ino = 1;
+    inode->i_mode = S_IFDIR | 0755;
+    inode->i_ctime = inode->i_mtime = inode->i_atime = current_time(inode);
     inode->i_op = &simple_dir_inode_operations;
     inode->i_fop = &simple_dir_operations;
-
+    set_nlink(inode, 2);
     sb->s_root = d_make_root(inode);
-
     if (!sb->s_root)
     {
-        printk(KERN_ERR "+ myvfs: can't d_make_root\n");
-        iput(inode);
+        printk(KERN_ERR "+ myvfs: ERR: d_make_root\n");
         return -ENOMEM;
     }
-
     return 0;
 }
 
 static struct dentry *myvfs_mount(struct file_system_type *type, int flags, const char *dev, void *data)
 {
-    struct dentry *const entry = mount_nodev(type, flags, data, myvfs_fill_sb);
+    struct dentry *const entry = mount_nodev(type, flags, data, myvfs_fill_super);
 
     if (IS_ERR(entry))
-        printk(KERN_ERR "+ myvfs mounting failed\n");
+        printk(KERN_ERR "+ myvfs: mounting failed\n");
     else
-        printk(KERN_INFO "+ myvfs mounted\n");
+        printk(KERN_INFO "+ myvfs: mounted\n");
 
     return entry;
 }
 
-static void myvfs_kill_sb(struct super_block *sb)
+static void myvfs_kill_super(struct super_block *sb)
 {
-    printk(KERN_INFO "+ myvfs: kill super block\n");
+    printk(KERN_INFO "+ myvfs: call myvfs_kill_super\n");
     kill_anon_super(sb);
 }
 
-static struct file_system_type myvfs_type = {
-    .owner = THIS_MODULE,
-    .name = "myvfs",
-    .mount = myvfs_mount,
-    .kill_sb = myvfs_kill_sb,
-    .fs_flags = FS_USERNS_MOUNT,
-};
-
 void f_init(void *p)
 {
-    *(int *)p = (int) p;
+    *(int *)p = (int)p;
 }
 
 static int __init myvfs_init(void)

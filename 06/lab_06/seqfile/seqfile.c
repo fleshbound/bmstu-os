@@ -62,7 +62,7 @@ void *myseq_start(struct seq_file *m, loff_t *pos)
 
     if (*pos >= limit)
     {
-        printk(KERN_INFO "+ INFO: done\n");
+        printk(KERN_INFO "** INFO: myseq_start done\n");
         return NULL;
     }
 
