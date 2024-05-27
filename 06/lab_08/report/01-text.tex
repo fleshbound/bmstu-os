@@ -1,0 +1,71 @@
+\chapter{Структуры}
+
+Версия ядра: \texttt{6.5.0-32-generic}.
+
+\includelistingpretty{IOFILE.c}{C}{Структура struct \_IO\_FILE}
+
+\includelistingpretty{structstat.c}{C}{Структура struct stat}
+
+\chapter{Программы}
+
+\section{Первая программа}
+
+\subsection{Без использования потоков}
+
+\includelistingpretty{1.c}{C}{Первая программа}
+
+\includeimage{res_1}{f}{h}{0.9\textwidth}{Результат выполнения программы}
+
+\subsection{С использованием двух дополнительных потоков}
+
+\includelistingpretty{1_thread.c}{C}{Первая программа}
+
+\includeimage{res_1_thread}{f}{h}{0.9\textwidth}{Результат выполнения программы}
+
+\clearpage
+
+\section{Вторая программа, первый вариант}
+
+\subsection{Без использования потоков}
+
+\includelistingpretty{2.c}{C}{Вторая программа, первый вариант}
+
+\includeimage{res_2}{f}{h}{0.9\textwidth}{Результат выполнения программы}
+
+\subsection{С использованием двух дополнительных потоков}
+
+\includelistingpretty{2_thread.c}{C}{Вторая программа, первый вариант (два дополнительных потока)}
+
+\includeimage{res_2_thread}{f}{h}{0.9\textwidth}{Результат выполнения программы}
+
+\clearpage
+
+\section{Вторая программа, второй вариант}
+
+\subsection{Без использования потоков}
+
+\includelistingpretty{2_1.c}{C}{Вторая программа, второй вариант}
+
+\includeimage{res_2_1}{f}{h}{0.9\textwidth}{Результат выполнения программы}
+
+\subsection{С использованием двух дополнительных потоков}
+
+\includelistingpretty{2_1_thread.c}{C}{Вторая программа, второй вариант (два дополнительных потока)}
+
+\includeimage{res_2_1_thread}{f}{h}{0.9\textwidth}{Результат выполнения программы}
+
+\clearpage
+
+\section{Первая программа}
+
+\subsection{Без использования потоков}
+
+\includelistingpretty{3.c}{C}{Третья программа}
+
+\includeimage{res_3}{f}{h}{0.4\textwidth}{Результат выполнения программы}
+
+\subsection{С использованием двух дополнительных потоков}
+
+\includelistingpretty{3_thread.c}{C}{Третья программа (два дополнительных потока)}
+
+\includeimage{res_3_thread}{f}{h}{0.4\textwidth}{Результат выполнения программы}

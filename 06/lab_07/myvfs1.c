@@ -26,6 +26,7 @@ static struct tree_descr files[] = {
 
 static int myvfs_fill_super(struct super_block *sb, void *data, int silent)
 {
+    printk(KERN_INFO "+ INFO: call myvfs_fill_super\n");
     return simple_fill_super(sb, MYVFS_MAGIC_NUMBER, files);
 }
 
@@ -43,6 +44,7 @@ static struct dentry *myvfs_mount(struct file_system_type *type, int flags, cons
 
 void my_kill_super(struct super_block *sb)
 {
+    printk(KERN_INFO "+ INFO: call my_kill_super\n");
     return kill_litter_super(sb);
 }
 
