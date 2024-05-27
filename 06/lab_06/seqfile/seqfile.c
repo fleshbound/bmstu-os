@@ -5,6 +5,12 @@
 #include <linux/proc_fs.h>
 #include <linux/version.h>
 #include <linux/seq_file.h>
+#include <linux/init_task.h>  
+#include <linux/kernel.h>     
+#include <linux/sched.h>
+#include <linux/fs_struct.h>
+#include <linux/path.h>
+#include <linux/kstrtox.h>
 
 MODULE_LICENSE("GPL");
 
@@ -48,7 +54,7 @@ static struct seq_operations seq_ops = {
 };
 
 static struct proc_dir_entry *proc_file, *proc_dir, *proc_link;
-static int limit = 10;
+static int limit = 1;
 
 void *myseq_start(struct seq_file *m, loff_t *pos)
 {
@@ -61,7 +67,21 @@ void *myseq_start(struct seq_file *m, loff_t *pos)
     }
 
     loff_t *spos = kmalloc(sizeof(loff_t), GFP_KERNEL);
-    seq_printf(m, "current pid=%d\n", current->pid);
+    seq_printf(m, "current:\ncomm - %s\npid - %d\nparent comm - %s\nppid - %d\nstate - %d\non_cpu - %d\nflags - %x\nprio - %d\npolicy - %d\nexit_state - %d\nexit_code - %d\nin_execve - %x\nutime - %llu\nroot - %s\n",
+            current->comm,
+            current->pid,
+            current->parent->comm,
+            current->parent->pid,
+            current->__state,
+            current->on_cpu,
+            current->flags,
+            current->prio,
+            current->policy,
+            current->exit_state,
+            current->exit_code,
+            current->in_execve,
+            current->utime,
+            current->fs->root.dentry->d_name.name);
 
     if (!spos)
         return NULL;
@@ -79,12 +99,12 @@ void myseq_stop(struct seq_file *m, void *v)
 void *myseq_next(struct seq_file *m, void *v, loff_t *pos)
 {
     printk(KERN_INFO "** INFO: call myseq_next\n");
-    loff_t *spos = v;
+    loff_t *spos = v; 
+
+    *pos = ++*spos;
 
     if (*pos >= limit)
         return NULL;
-
-    *pos = ++*spos;
     
     return spos;
 }
