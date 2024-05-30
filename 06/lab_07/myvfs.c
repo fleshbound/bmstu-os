@@ -40,7 +40,6 @@ static struct file_system_type myvfs_type = {
     .name = "myvfs",
     .mount = myvfs_mount,
     .kill_sb = myvfs_kill_super,
-    .fs_flags = FS_USERNS_MOUNT,
 };
 
 static void myvfs_put_super(struct super_block *sb)
@@ -89,6 +88,7 @@ static int myvfs_fill_super(struct super_block *sb, void *data, int silent)
     if (!sb->s_root)
     {
         printk(KERN_ERR "+ myvfs: ERR: d_make_root\n");
+        iput(inode);
         return -ENOMEM;
     }
     return 0;
