@@ -27,13 +27,11 @@ static struct proc_dir_entry *proc_file, *proc_dir, *proc_link;
 
 static ssize_t my_read(struct file *file, char *buf, size_t count, loff_t *f_pos);
 static int my_release(struct inode*, struct file*);
-static ssize_t my_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos);
 static int my_open(struct inode *inode, struct file *file);
 
 #ifdef HAVE_PROC_OPS
 static struct proc_ops fops = {
     .proc_read = my_read,
-    .proc_write = my_write,
     .proc_open = my_open,
     .proc_release = my_release
 };
@@ -41,7 +39,6 @@ static struct proc_ops fops = {
 static struct file_operations fops = {
     .owner = THIS_MODULE,
     .read = my_read,
-    .write = my_write,
     .open = my_open,
     .release = my_release
 }
@@ -57,28 +54,6 @@ static int my_release(struct inode*, struct file*)
 {
     printk(KERN_INFO "+ INFO: call my_release");
     return 0;
-}
-
-static ssize_t my_write(struct file *file, const char __user *buf, size_t count, loff_t *f_pos)
-{
-    printk(KERN_INFO "+ INFO: call my_write");
-
-    int space_left = BUF_SIZE + 1;
-
-    if (space_left < count) {
-        printk(KERN_ERR "+ ERROR: no space left\n");
-        return -ENOSPC;
-    }
-
-    if (copy_from_user(buffer, buf, count)) {
-        printk(KERN_ERR "+ ERROR: copy_from_user\n");
-        return -EFAULT;
-    }
-
-    buffer[count - 1] = '\0';
-    printk(KERN_INFO "+ INFO: success my_write");
-
-    return count;
 }
 
 static int my_show(struct seq_file *m, void *v)
@@ -99,12 +74,12 @@ static int my_open(struct inode *inode, struct file *file)
 
 void my_tasklet_fun(unsigned long data)
 {
-    printk(KERN_INFO "+ INFO: my_tasklet_func, state=%ld, arg=%x\n", tasklet->state, inb(0x60));
+    printk(KERN_INFO "+ INFO: call my_tasklet_func, tasklet state=%ld, arg=%x\n", tasklet->state, inb(0x60));
 }
 
 static irqreturn_t my_irq_handler(int irq, void *dev_id)
 {
-    printk(KERN_INFO "+ INFO: call my_irq_handler");
+    printk(KERN_INFO "+ INFO: call my_irq_handler,  tasklet state=%ld\n", tasklet->state);
     tasklet_schedule(tasklet);
     return IRQ_HANDLED;
 }
@@ -115,7 +90,7 @@ static int __init my_init(void)
 
     if (ret)
     {
-        printk(KERN_INFO "+ ERR: request_irq\n");
+        printk(KERN_ERR "+ ERR: request_irq\n");
         return ret;
     }
 
@@ -140,7 +115,7 @@ static int __init my_init(void)
     }
 
     memset(buffer, 0, BUF_SIZE);
-    proc_file = proc_create_data("tasklet", S_IRUGO | S_IWUGO, NULL, &fops, NULL);
+    proc_file = proc_create_data("tasklet", S_IRUGO, NULL, &fops, NULL);
 
     if (!proc_file) {
         vfree(buffer);
