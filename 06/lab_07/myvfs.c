@@ -40,6 +40,7 @@ static struct file_system_type myvfs_type = {
     .name = "myvfs",
     .mount = myvfs_mount,
     .kill_sb = myvfs_kill_super,
+    .fs_flags = FS_USERNS_MOUNT,
 };
 
 static void myvfs_put_super(struct super_block *sb)
@@ -176,3 +177,6 @@ static void __exit myvfs_exit(void)
 
 module_init(myvfs_init);
 module_exit(myvfs_exit);
+
+MODULE_AUTHOR("Avdeykina Valeria");
+
