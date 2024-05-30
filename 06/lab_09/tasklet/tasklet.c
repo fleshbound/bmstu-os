@@ -10,6 +10,7 @@
 #include <linux/vmalloc.h>
 #include <linux/proc_fs.h>
 #include <linux/version.h>
+#include <asm/io.h>
 
 MODULE_LICENSE("GPL");
 
@@ -98,7 +99,7 @@ static int my_open(struct inode *inode, struct file *file)
 
 void my_tasklet_fun(unsigned long data)
 {
-    printk(KERN_INFO "+ INFO: my_tasklet_func, arg=%c\n", (char)data);
+    printk(KERN_INFO "+ INFO: my_tasklet_func, state=%ld, arg=%x\n", tasklet->state, inb(0x60));
 }
 
 static irqreturn_t my_irq_handler(int irq, void *dev_id)
@@ -139,7 +140,7 @@ static int __init my_init(void)
     }
 
     memset(buffer, 0, BUF_SIZE);
-    proc_file = proc_create_data("mytasklet", S_IRUGO | S_IWUGO, NULL, &fops, NULL);
+    proc_file = proc_create_data("tasklet", S_IRUGO | S_IWUGO, NULL, &fops, NULL);
 
     if (!proc_file) {
         vfree(buffer);
@@ -147,10 +148,10 @@ static int __init my_init(void)
         return -ENOMEM;
     }
    
-    printk(KERN_INFO "+ INFO: mytasklet_init");
+    printk(KERN_INFO "+ INFO: tasklet_init");
 
-    proc_dir = proc_mkdir("mytasklet_dir", NULL);
-    proc_link = proc_symlink("mytasklet_symlink", NULL, "/proc/mytasklet");
+    proc_dir = proc_mkdir("tasklet_dir", NULL);
+    proc_link = proc_symlink("tasklet_symlink", NULL, "/proc/tasklet");
     
     if (!proc_dir || !proc_link) {
         vfree(buffer);
@@ -163,10 +164,14 @@ static int __init my_init(void)
 
 static void __exit my_exit(void)
 {
+    proc_remove(proc_file);
+    proc_remove(proc_dir);
+    proc_remove(proc_link);
     tasklet_kill(tasklet);
     kfree(tasklet);
     free_irq(IRQ_NO, (void *)(my_irq_handler));
     printk(KERN_INFO "+ INFO: my_exit---------END\n");
+
 }
 
 module_init(my_init);
