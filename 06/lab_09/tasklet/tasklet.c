@@ -21,6 +21,15 @@ MODULE_LICENSE("GPL");
 #define HAVE_PROC_OPS
 #endif
 
+char * ascii[84] =  { " ", "Esc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "+", "Backspace", 
+                      "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "Enter", "Ctrl",
+                      "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "\"", "'", "Shift (left)", "|", 
+                      "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?", "Shift (right)", 
+                      "*", "Alt", "Space", "CapsLock", 
+                      "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10",
+                      "NumLock", "ScrollLock", "Home", "Up", "Page-Up", "-", "Left",
+                      " ", "Right", "+", "End", "Down", "Page-Down", "Insert", "Delete"};
+
 static struct tasklet_struct *tasklet = NULL;
 static char *buffer = NULL;
 static struct proc_dir_entry *proc_file, *proc_dir, *proc_link;
@@ -74,14 +83,24 @@ static int my_open(struct inode *inode, struct file *file)
 
 void my_tasklet_fun(unsigned long data)
 {
-    printk(KERN_INFO "+ INFO: call my_tasklet_func, tasklet state=%ld, arg=%x\n", tasklet->state, inb(0x60));
+    int code = inb(0x60);
+
+    if (code < 84)
+        printk(KERN_INFO "+ INFO: call my_tasklet_func,    tasklet state=%ld, inb=%s\n", tasklet->state, ascii[code]);
 }
 
 static irqreturn_t my_irq_handler(int irq, void *dev_id)
 {
-    printk(KERN_INFO "+ INFO: call my_irq_handler,  tasklet state=%ld\n", tasklet->state);
-    tasklet_schedule(tasklet);
-    return IRQ_HANDLED;
+    if (irq == IRQ_NO)
+    {
+        printk(KERN_INFO "+ INFO: before tasklet_schedule, tasklet state=%ld\n", tasklet->state);
+        tasklet_schedule(tasklet);
+        printk(KERN_INFO "+ INFO: after tasklet_schedule,  tasklet state=%ld\n", tasklet->state);
+        return IRQ_HANDLED;
+    }
+
+    printk(KERN_INFO "+ INFO: irq wasn't handled\n");
+    return IRQ_NONE;
 }
 
 static int __init my_init(void)
@@ -146,7 +165,6 @@ static void __exit my_exit(void)
     kfree(tasklet);
     free_irq(IRQ_NO, (void *)(my_irq_handler));
     printk(KERN_INFO "+ INFO: my_exit---------END\n");
-
 }
 
 module_init(my_init);
