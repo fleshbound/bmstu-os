@@ -10,6 +10,7 @@
 #include <linux/vmalloc.h>
 #include <linux/proc_fs.h>
 #include <linux/version.h>
+#include <linux/time.h>
 #include <asm/io.h>
 
 MODULE_LICENSE("GPL");
@@ -86,7 +87,7 @@ void my_tasklet_fun(unsigned long data)
     int code = inb(0x60);
 
     if (code < 84)
-        printk(KERN_INFO "+ INFO: call my_tasklet_func,    tasklet state=%ld, inb=%s\n", tasklet->state, ascii[code]);
+        printk(KERN_INFO "+ INFO: call my_tasklet_func,    tasklet state=%ld, inb=%s, time=%llu\n", tasklet->state, ascii[code], ktime_get());
 }
 
 static irqreturn_t my_irq_handler(int irq, void *dev_id)
