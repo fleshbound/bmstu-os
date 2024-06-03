@@ -87,16 +87,16 @@ void my_tasklet_fun(unsigned long data)
     int code = inb(0x60);
 
     if (code < 84)
-        printk(KERN_INFO "+ INFO: call my_tasklet_func,    tasklet state=%ld, inb=%s, time=%llu\n", tasklet->state, ascii[code], ktime_get());
+        printk(KERN_INFO "+ INFO: call my_tasklet_func,    tasklet state=%ld, time=%llu, inb=%s\n", tasklet->state, ktime_get(), ascii[code]);
 }
 
 static irqreturn_t my_irq_handler(int irq, void *dev_id)
 {
     if (irq == IRQ_NO)
     {
-        printk(KERN_INFO "+ INFO: before tasklet_schedule, tasklet state=%ld\n", tasklet->state);
+        printk(KERN_INFO "+ INFO: before tasklet_schedule, tasklet state=%ld, time=%llu\n", tasklet->state, ktime_get());
         tasklet_schedule(tasklet);
-        printk(KERN_INFO "+ INFO: after tasklet_schedule,  tasklet state=%ld\n", tasklet->state);
+        printk(KERN_INFO "+ INFO: after tasklet_schedule,  tasklet state=%ld, time=%llu\n", tasklet->state, ktime_get());
         return IRQ_HANDLED;
     }
 
