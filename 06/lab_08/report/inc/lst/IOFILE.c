@@ -1,3 +1,5 @@
+typedef struct _IO_FILE FILE;
+
 struct _IO_FILE
 {
   int _flags;		/* High-order word is _IO_MAGIC; rest is flags. */

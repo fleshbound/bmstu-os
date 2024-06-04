@@ -41,12 +41,6 @@ int main()
       return 1;
     }
   }
-  for (int i = 0; i < 2; i++)
-    if (pthread_join(thr[i], NULL))
-    {
-      perror("pthread_join");
-      return 1;
-    }
   close(fd[0]);
   close(fd[1]);
   return 0;
