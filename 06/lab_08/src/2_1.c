@@ -8,16 +8,15 @@ struct stat statbuf;
 #define PRINT_STAT(action) \
     do { \
         stat("q.txt", &statbuf); \
-        fprintf(stdout, action ": inode = %ld, size = %ld bytes, blksize = %ld\n", \
-            statbuf.st_ino, statbuf.st_size, \
-            statbuf.st_blksize); \
+        fprintf(stdout, action ": inode = %ld, size = %ld bytes\n", \
+            statbuf.st_ino, statbuf.st_size); \
     } while (0);
 
 int main()
 {
-    int fd1 = open("q.txt", O_RDWR);
+    int fd1 = open("q.txt", O_RDWR | O_APPEND);
     PRINT_STAT("open fd1 ");
-    int fd2 = open("q.txt", O_RDWR);
+    int fd2 = open("q.txt", O_RDWR | O_APPEND);
     PRINT_STAT("open fd2 ");
     for (char c = 'a'; c <= 'z'; c++)
     {

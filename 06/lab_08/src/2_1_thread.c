@@ -9,12 +9,9 @@ struct stat statbuf;
 #define PRINT_STAT(action, i) \
     do { \
         stat("q.txt", &statbuf); \
-        fprintf(stdout, action " %d: inode number = %ld, size = %ld bytes, blksize = %ld\n", \
-            i, statbuf.st_ino, statbuf.st_size, \
-            statbuf.st_blksize); \
+        fprintf(stdout, action " %d: inode number = %ld, size = %ld bytes\n", \
+            i, statbuf.st_ino, statbuf.st_size); \
     } while (0);
-
-pthread_mutex_t mutex;
 
 struct thread_arg {
     int fd;
@@ -28,10 +25,8 @@ void *thread_start(void *arg)
     for (char c = 'a'; c <= 'z'; c++)
         if (c % 2 == targ->i)
         {
-            pthread_mutex_lock(&mutex);
             write(targ->fd, &c, 1);
             PRINT_STAT("write", targ->i);
-            pthread_mutex_unlock(&mutex);
         }
 
     return NULL;
@@ -39,16 +34,10 @@ void *thread_start(void *arg)
 
 int main()
 {
-    int fd[2] = {open("q.txt", O_RDWR),
+    int fd[2] = {open("q.txt", O_RDWR | O_APPEND),
                  open("q.txt", O_RDWR | O_APPEND)};
     pthread_t thr[2];
     struct thread_arg targ[2];
-
-    if (pthread_mutex_init(&mutex, NULL))
-    {
-        perror("pthread_mutex_init");
-        return 1;
-    }
 
     for (int i = 0; i < 2; i++)
     {
@@ -68,12 +57,6 @@ int main()
             perror("pthread_join");
             return 1;
         }
-
-    if (pthread_mutex_destroy(&mutex))
-    {
-        perror("pthread_mutex_destroy");
-        return 1;
-    }
 
     close(fd[0]);
     close(fd[1]);
