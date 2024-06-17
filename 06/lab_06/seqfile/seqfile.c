@@ -54,19 +54,12 @@ static struct seq_operations seq_ops = {
 };
 
 static struct proc_dir_entry *proc_file, *proc_dir, *proc_link;
-static int limit = 1;
+static int limit = 0;
 
 void *myseq_start(struct seq_file *m, loff_t *pos)
 {
     printk(KERN_INFO "** INFO: call myseq_start\n");
 
-    if (*pos >= limit)
-    {
-        printk(KERN_INFO "** INFO: myseq_start done\n");
-        return NULL;
-    }
-
-    loff_t *spos = kmalloc(sizeof(loff_t), GFP_KERNEL);
     seq_printf(m, "current:\ncomm - %s\npid - %d\nparent comm - %s\nppid - %d\nstate - %d\non_cpu - %d\nflags - %x\nprio - %d\npolicy - %d\nexit_state - %d\nexit_code - %d\nin_execve - %x\nutime - %llu\nroot - %s\n",
             current->comm,
             current->pid,
@@ -83,37 +76,49 @@ void *myseq_start(struct seq_file *m, loff_t *pos)
             current->utime,
             current->fs->root.dentry->d_name.name);
 
-    if (!spos)
+    if (*pos > limit)
+    {
+        printk(KERN_INFO "** INFO: myseq_start done\n");
         return NULL;
+    }
+    
+    //loff_t *spos = kmalloc(sizeof(loff_t), GFP_KERNEL);
+    
+    //if (!spos)
+    //    return NULL;
 
-    *spos = *pos;
-    return spos;
+    //*spos = *pos;
+    //return spos;
+    return pos;
 }
 
 void myseq_stop(struct seq_file *m, void *v)
 {
     printk(KERN_INFO "** INFO: call myseq_stop\n");
-    kfree(v);
+    //kfree(v);
 }
 
 void *myseq_next(struct seq_file *m, void *v, loff_t *pos)
 {
     printk(KERN_INFO "** INFO: call myseq_next\n");
-    loff_t *spos = v; 
+    //loff_t *spos = v; 
 
-    *pos = ++*spos;
+    //*pos = ++*spos;
+
+    (*pos)++;
 
     if (*pos >= limit)
         return NULL;
     
-    return spos;
+    //return spos;
+    return pos;
 }
 
 int myseq_show(struct seq_file *m, void *v)
 {
     printk(KERN_INFO "** INFO: call myseq_show\n");
-    loff_t *spos = v;
-    seq_printf(m, "%lld\n", (long long) *spos);
+    //loff_t *spos = v;
+    //seq_printf(m, "%lld\n", (long long) *spos);
     return 0;
 }
 
